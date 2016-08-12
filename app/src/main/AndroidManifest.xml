@@ -3,6 +3,7 @@
     package="com.example.dllo.keepproject">
 
     <application
+        android:name=".ui.app.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/keep_logo"
         android:label="@string/app_name"
@@ -10,12 +11,17 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.MainActivity"
             android:theme="@style/NoBar">
+
+        </activity>
+        <activity android:name=".ui.activity.WelcomeActivity" android:theme="@style/welcomeNoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+
     </application>
 
 </manifest>
