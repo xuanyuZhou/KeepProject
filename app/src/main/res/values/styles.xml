@@ -14,6 +14,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!--欢迎页没有标题栏-->
+    <style name="welcomeNoBar" parent="Theme.AppCompat.Light.NoActionBar"/>
 
     <!--标题栏style-->
     <style name="titleBar_style">
