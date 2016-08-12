@@ -3,6 +3,7 @@ package com.example.dllo.keepproject.ui.activity;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by dllo on 16/8/11.
  */
-public class WelcomeActivity extends AbsBaseActivity {
+public class WelcomeActivity extends AbsBaseActivity implements View.OnClickListener {
     private CustomVideoView welcomeVideoView;
     private Button registerBtn;
     private Button loginBtn;
@@ -51,6 +52,7 @@ public class WelcomeActivity extends AbsBaseActivity {
     @Override
     protected void initListeners() {
 
+        loginBtn.setOnClickListener(this);
     }
 
     @Override
@@ -131,6 +133,11 @@ public class WelcomeActivity extends AbsBaseActivity {
         // 参数4 unit - initialdelay 和 delay 参数的时间单位
         scheduledExecutorService.scheduleWithFixedDelay(new ViewPagerTask(), 5, 4, TimeUnit.SECONDS);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        goTo(this,MainActivity.class);
     }
 
     /**
