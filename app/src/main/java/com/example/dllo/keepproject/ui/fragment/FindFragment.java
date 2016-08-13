@@ -10,12 +10,15 @@ import android.widget.Toast;
 
 import com.example.dllo.keepproject.R;
 import com.example.dllo.keepproject.model.bean.FindFmSelectionBean;
+import com.example.dllo.keepproject.model.bean.FindFmTrendsBean;
 import com.example.dllo.keepproject.model.bean.FindFmrecommendBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
 import com.example.dllo.keepproject.ui.adapter.FindFmSelectionLvAdapter;
+import com.example.dllo.keepproject.ui.adapter.FindFmTrendsGvAdapter;
 import com.example.dllo.keepproject.ui.adapter.FindRecommendRvAdapter;
+import com.example.dllo.keepproject.view.MyCustomGridView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,8 +33,15 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private ImageView avatarIv;
     private ImageView photoIv;
     private ImageView goToIv;
+    private TextView gvContentTv;
+    private TextView gvLikesTv;
+    private TextView gvCommentTv;
+    private ImageView gvPhotoIv;
     private ListView seletionsListView;
     private RecyclerView recommmendRv;
+    private MyCustomGridView myCustomGridView;
+    private FindFmTrendsGvAdapter trendsGvAdapter;
+    private String trendsUrl = "http://api.gotokeep.com/v1.1/timeline/hot";
     private String recommendUrl = "http://api.gotokeep.com/v1.1/rankinglist/user/recommend";
     private String selectionsUrl = "http://api.gotokeep.com/v1.1/favorites/folders?type=pin";
     private FindFmSelectionLvAdapter selectionLvAdapter;
@@ -49,6 +59,11 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         sourceTv = byView(R.id.find_fragment_recommend_source);
         avatarIv = byView(R.id.find_fragment_recommend_avatarIv);
         goToIv = byView(R.id.find_fragment_selection_goTo_Iv);
+        gvCommentTv = byView(R.id.find_fragment_trends_comments);
+        gvContentTv = byView(R.id.find_fragment_trends_content);
+        gvLikesTv = byView(R.id.find_fragment_trends_likes);
+        gvPhotoIv = byView(R.id.find_fragment_trends_photo);
+        myCustomGridView = byView(R.id.find_fragment_recommend_gv);
         seletionsListView = byView(R.id.find_fragment_selection_Lv);
         recommmendRv = byView(R.id.find_fragment_recommend_rv);
 
@@ -67,6 +82,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     protected void initDatas() {
         initFindRvData();
         initFindLvData();
+        initFindGvData();
 
     }
 
@@ -122,7 +138,32 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
                 recommendRvAdapter.setDatas(response);
                 recommmendRv.setAdapter(recommendRvAdapter);
                 recommmendRv.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
+            }
+            @Override
+            public void onError(Throwable ex) {
 
+            }
+        });
+    }
+    private void initFindGvData(){
+        Map<String,String> gvHeadMap = new HashMap<>();
+        gvHeadMap.put("x-device-id","000000000000000080027dfd41d11111b0c27dbf");
+        gvHeadMap.put("X-KEEP-FROM","android");
+        gvHeadMap.put("X-KEEP-TIMEZONE","America/New_York");
+        gvHeadMap.put("X-KEEP-CHANNEL","baidu");
+        gvHeadMap.put("X-DEVICE","unknown-Google Nexus 5 - 5.1.0 - API 22 - 1080x1920");
+        gvHeadMap.put("X-KEEP-VERSION","3.8.1");
+        gvHeadMap.put("Authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1N2E3ZDRmZDRhMzEyMTY0MTRiZDZlM2QiLCJ1c2VybmFtZSI6Ik1hcnPlhqzlrp0iLCJhdmF0YXIiOiJodHRwOi8vc3RhdGljMS5nb3Rva2VlcC5jb20vYXZhdGFyLzIwMTYvMDgvMDgvMDgvM2VmNTUyMjJmODNlNTdkOWEyZmFlMjg1ODRiMGMzZTg5YzE3ZGEyNC5qcGciLCJpYXQiOjE0NzEwNDczNDMsImV4cCI6MTQ3MzYzOTM0MywiaXNzIjoiaHR0cDovL3d3dy5nb3Rva2VlcC5jb20vIn0.jgLJUAM8LmWozbrbDF2xoEXtJtZFC_zcfXfaCOqSSb4");
+        gvHeadMap.put("User-Agent","Dalvik/2.1.0 (Linux; U; Android 5.1; Google Nexus 5 - 5.1.0 - API 22 - 1080x1920 Build/LMY47D) Paros/3.2.13");
+        gvHeadMap.put("Host","api.gotokeep.com");
+        gvHeadMap.put("Connection","Keep-Alive");
+        DlaHttp tool = DlaHttp.getInstance();
+        tool.startRequest(trendsUrl, FindFmTrendsBean.class, gvHeadMap, new OnHttpCallback<FindFmTrendsBean>() {
+            @Override
+            public void onSuccess(FindFmTrendsBean response) {
+                trendsGvAdapter = new FindFmTrendsGvAdapter(context);
+                trendsGvAdapter.setDatas(response);
+                myCustomGridView.setAdapter(trendsGvAdapter);
             }
 
             @Override
@@ -130,7 +171,6 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
 
             }
         });
-
     }
 
 

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/find_fragment_trends_photo"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/find_fragment_trends_content"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:maxEms="5"
+        android:singleLine="true"
+        android:ellipsize = "end"
+        android:text="健体运动员 哈哈哈哈哈哈哈啊哈哈哈啊哈哈啊是打大神大神大神大神的哈"
+        android:textSize="13dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@mipmap/icon_hot_tag_recommend_praise" />
+
+        <TextView
+            android:id="@+id/find_fragment_trends_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="170"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/icon_hot_tag_recommend_reply" />
+
+        <TextView
+            android:id="@+id/find_fragment_trends_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="170"
+            android:textSize="10dp" />
+    </LinearLayout>
+</LinearLayout>
