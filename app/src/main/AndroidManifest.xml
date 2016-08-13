@@ -21,7 +21,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".ui.activity.WelcomeActivity" android:theme="@style/welcomeNoBar">
+        <activity android:name=".ui.activity.WelcomeActivity" android:theme="@style/NoBar">
 
         </activity>
         
