@@ -39,6 +39,7 @@ public abstract class AbsBaseFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         // 调用
         initView();
+        setListeners();
     }
 
     // 绑定组件

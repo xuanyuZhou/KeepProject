@@ -22,9 +22,10 @@
 
         </activity>
         <activity android:name=".ui.activity.WelcomeActivity" android:theme="@style/NoBar">
-
         </activity>
-        
+
+        <activity android:name=".ui.activity.FindSelectionsActivity"
+            android:theme="@style/NoBar"/>
 
     </application>
 
