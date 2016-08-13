@@ -23,7 +23,12 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">#534B5B</item>
     </style>
-
+    <!--发现页style-->
+<style name="foucusBar_style">
+    <item name="android:layout_height">50dp</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:background">#534B5B</item>
+</style>
     <!--RadioButton_style-->
     <style name="radioBtn_style">
         <item name="android:layout_margin">3dp</item>
