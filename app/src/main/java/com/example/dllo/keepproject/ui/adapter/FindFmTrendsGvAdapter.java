@@ -1,6 +1,7 @@
 package com.example.dllo.keepproject.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,7 @@ public class FindFmTrendsGvAdapter extends BaseAdapter{
         holder.contentTv.setText(datas.getData().get(position).getContent());
         holder.commentTv.setText(String.valueOf(datas.getData().get(position).getComments()));
         holder.likesTv.setText(String.valueOf(datas.getData().get(position).getLikes()));
-        Picasso.with(context).load(datas.getData().get(position).getPhoto()).into(holder.photoIv);
+        Picasso.with(context).load(datas.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).into(holder.photoIv);
         return convertView;
     }
     class FindFmTrendsGvHolder{

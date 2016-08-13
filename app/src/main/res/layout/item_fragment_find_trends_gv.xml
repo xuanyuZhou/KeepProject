@@ -18,9 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:textColor="@android:color/black"
-        android:maxEms="5"
-        android:singleLine="true"
-        android:ellipsize = "end"
+        android:lines="2"
+        android:ellipsize="end"
         android:text="健体运动员 哈哈哈哈哈哈哈啊哈哈哈啊哈哈啊是打大神大神大神大神的哈"
         android:textSize="13dp" />
 
