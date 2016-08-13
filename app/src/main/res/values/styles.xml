@@ -3,25 +3,32 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#534B5B</item>
-        <item name="colorPrimaryDark">#534B5B</item>
+        <item name="colorPrimary">@color/colorHui</item>
+        <item name="colorPrimaryDark">@color/colorHui</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <!--去掉原生标题栏-->
     <style name="NoBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">#534B5B</item>
+        <item name="colorPrimary">@color/colorHui</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!--欢迎页没有标题栏-->
+    <style name="welcomeNoBar" parent="Theme.AppCompat.Light.NoActionBar"/>
 
     <!--标题栏style-->
     <style name="titleBar_style">
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:background">#534B5B</item>
+        <item name="android:background">@color/colorHui</item>
     </style>
-
+    <!--发现页style-->
+<style name="foucusBar_style">
+    <item name="android:layout_height">50dp</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:background">#534B5B</item>
+</style>
     <!--RadioButton_style-->
     <style name="radioBtn_style">
         <item name="android:layout_margin">3dp</item>
