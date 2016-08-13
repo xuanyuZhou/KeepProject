@@ -4,6 +4,7 @@ import android.widget.ListView;
 
 import com.example.dllo.keepproject.R;
 import com.example.dllo.keepproject.model.bean.FocusHasBeenBean;
+import com.example.dllo.keepproject.model.bean.UrlBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.adapter.FocusHasBeenAdapter;
@@ -20,7 +21,6 @@ import java.util.Map;
 public class FocusHasBeenFragment extends AbsBaseFragment{
 
     private ListView listView;
-    private String url = "http://api.gotokeep.com/v1.1/timeline/followings";
     private FocusHasBeenAdapter adapter;
 
     @Override
@@ -54,7 +54,7 @@ public class FocusHasBeenFragment extends AbsBaseFragment{
         headMap.put("Connection","Keep-Alive");
         DlaHttp tool = DlaHttp.getInstance();
 
-         tool.startRequest(url, FocusHasBeenBean.class, headMap, new OnHttpCallback<FocusHasBeenBean>() {
+         tool.startRequest(UrlBean.HAS_BEEN_URL, FocusHasBeenBean.class, headMap, new OnHttpCallback<FocusHasBeenBean>() {
              @Override
              public void onSuccess(FocusHasBeenBean response) {
 

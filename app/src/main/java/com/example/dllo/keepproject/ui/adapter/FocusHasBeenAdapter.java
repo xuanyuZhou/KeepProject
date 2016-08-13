@@ -66,6 +66,10 @@ public class FocusHasBeenAdapter extends BaseAdapter{
         holder.addressTv.setText(bean.getData().get(position).getCity());
         holder.contentTv.setText(bean.getData().get(position).getContent());
        // holder.greenContentTv.setText(bean.getData().get(position).getContent());
+        if (!bean.getData().get(position).getMeta().equals(null)){
+            holder.metaTv.setText("完成"+bean.getData().get(position).getMeta().getName()+"第"+bean.getData().get(position).getMeta().getCount()+"次");
+
+        }
         if (!bean.getData().get(position).getPhoto().isEmpty()){
             Picasso.with(context).load(bean.getData().get(position).getPhoto()).into(holder.contentImage);
         }
@@ -87,6 +91,7 @@ public class FocusHasBeenAdapter extends BaseAdapter{
         private ImageView contentImage;
         private TextView likeCountTv;
         private TextView reviewTv;
+        private TextView metaTv;
 
         public hasBeenViewHolder(View view) {
             headImage = (CircleImageView) view.findViewById(R.id.focus_hasbeen_item_headImage);
@@ -97,6 +102,7 @@ public class FocusHasBeenAdapter extends BaseAdapter{
             contentImage = (ImageView) view.findViewById(R.id.focus_hasbeen_item_contentImage);
             likeCountTv = (TextView) view.findViewById(R.id.focus_hasbeen_item_likeCountTv);
             reviewTv = (TextView) view.findViewById(R.id.focus_hasbeen_item_reviewTv);
+            metaTv = (TextView) view.findViewById(R.id.focus_hasbeen_item_metaTv);
         }
     }
 }
