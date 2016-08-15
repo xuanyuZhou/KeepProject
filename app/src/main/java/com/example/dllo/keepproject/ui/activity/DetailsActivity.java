@@ -3,7 +3,7 @@ package com.example.dllo.keepproject.ui.activity;
 import com.example.dllo.keepproject.R;
 
 /**
- * Created by dllo on 16/8/13.
+ * Created by dllo on 16/8/15.
  */
 public class DetailsActivity extends AbsBaseActivity {
     @Override
@@ -25,5 +25,4 @@ public class DetailsActivity extends AbsBaseActivity {
     protected void initDatas() {
 
     }
-
 }
