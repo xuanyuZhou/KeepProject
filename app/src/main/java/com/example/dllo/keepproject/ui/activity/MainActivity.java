@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.RadioGroup;
 
 import com.example.dllo.keepproject.R;
-import com.example.dllo.keepproject.ui.fragment.FindFragment;
+import com.example.dllo.keepproject.ui.fragment.BigMoveFindFragment;
 import com.example.dllo.keepproject.ui.fragment.FocusFragment;
 import com.example.dllo.keepproject.ui.fragment.MeFragment;
 import com.example.dllo.keepproject.ui.fragment.TrainFragment;
@@ -16,7 +16,7 @@ import com.example.dllo.keepproject.ui.fragment.TrainFragment;
 public class MainActivity extends AbsBaseActivity implements RadioGroup.OnCheckedChangeListener {
     private RadioGroup mainAtyRadioGroup;
     private TrainFragment trainFragment;
-    private FindFragment findFragment;
+    private BigMoveFindFragment bigMoveFindFragment;
     private FocusFragment focusFragment;
     private MeFragment meFragment;
 
@@ -39,7 +39,7 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
     protected void initDatas() {
         // 初始化fragment
         trainFragment = new TrainFragment();
-        findFragment = new FindFragment();
+        bigMoveFindFragment = new BigMoveFindFragment();
         focusFragment = new FocusFragment();
         meFragment = new MeFragment();
 
@@ -64,7 +64,7 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
                 fragmentTransaction.replace(R.id.mainAty_frameLayout, trainFragment);
                 break;
             case R.id.mainAty_radioGroup_findRBtn:
-                fragmentTransaction.replace(R.id.mainAty_frameLayout, findFragment);
+                fragmentTransaction.replace(R.id.mainAty_frameLayout, bigMoveFindFragment);
                 break;
             case R.id.mainAty_radioGroup_focusRBtn:
                 fragmentTransaction.replace(R.id.mainAty_frameLayout, focusFragment);

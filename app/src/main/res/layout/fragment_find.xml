@@ -34,8 +34,18 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@mipmap/create_schedule_up"></FrameLayout>
+                android:layout_height="180dp">
+                <ImageView
+                    android:background="@mipmap/create_schedule_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/find_fragment_keep_goToIv"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/keepfive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
 
             <View style="@style/midLine" />
 
