@@ -29,6 +29,8 @@
         <activity android:name=".ui.activity.BigMoveViewPageActivity"
             android:theme="@style/NoBar"/>
 
+        <activity android:name=".ui.activity.DetailsActivity"/>
+
     </application>
 
 </manifest>
