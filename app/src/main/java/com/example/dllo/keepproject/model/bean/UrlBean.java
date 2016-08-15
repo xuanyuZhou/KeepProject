@@ -16,4 +16,9 @@ public class UrlBean {
      * 已关注接口
      */
     public static final String HAS_BEEN_URL = "http://api.gotokeep.com/v1.1/timeline/followings";
+
+    /**
+     * 小组接口
+     */
+    public static final String GROUP_URL ="http://api.gotokeep.com/v1.1/group";
 }

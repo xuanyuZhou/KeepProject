@@ -1,5 +1,7 @@
 package com.example.dllo.keepproject.ui.fragment;
 
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.dllo.keepproject.R;
@@ -7,6 +9,7 @@ import com.example.dllo.keepproject.model.bean.FocusHasBeenBean;
 import com.example.dllo.keepproject.model.bean.UrlBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
+import com.example.dllo.keepproject.ui.activity.DetailsActivity;
 import com.example.dllo.keepproject.ui.adapter.FocusHasBeenAdapter;
 import com.example.dllo.keepproject.ui.app.MyApp;
 import com.example.dllo.keepproject.view.MyCustomListView;
@@ -14,14 +17,17 @@ import com.example.dllo.keepproject.view.MyCustomListView;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by dllo on 16/8/12.
  * 已关注的 fragment
  */
-public class FocusHasBeenFragment extends AbsBaseFragment{
+public class FocusHasBeenFragment extends AbsBaseFragment implements AdapterView.OnItemClickListener, View.OnClickListener {
 
     private ListView listView;
     private FocusHasBeenAdapter adapter;
+    private CircleImageView topicImg;
 
     @Override
     protected int setLayout() {
@@ -31,18 +37,26 @@ public class FocusHasBeenFragment extends AbsBaseFragment{
     @Override
     protected void initView() {
         listView = byView(R.id.focus_hasbeen_lv);
+        topicImg = byView(R.id.focus_hasbeen_topic);
 
 
     }
 
     @Override
     protected void setListeners() {
+        listView.setOnItemClickListener(this);
+        topicImg.setOnClickListener(this);
 
     }
 
     @Override
     protected void initDatas() {
 
+        initHasBeenData();
+
+    }
+
+    public void initHasBeenData() {
         Map<String,String> headMap = new HashMap<>();
         headMap.put("x-device-id","000000000000000080027f482c2111119b127f0a");
         headMap.put("X-KEEP-FROM","android");
@@ -54,20 +68,29 @@ public class FocusHasBeenFragment extends AbsBaseFragment{
         headMap.put("Connection","Keep-Alive");
         DlaHttp tool = DlaHttp.getInstance();
 
-         tool.startRequest(UrlBean.HAS_BEEN_URL, FocusHasBeenBean.class, headMap, new OnHttpCallback<FocusHasBeenBean>() {
-             @Override
-             public void onSuccess(FocusHasBeenBean response) {
+        tool.startRequest(UrlBean.HAS_BEEN_URL, FocusHasBeenBean.class, headMap, new OnHttpCallback<FocusHasBeenBean>() {
+            @Override
+            public void onSuccess(FocusHasBeenBean response) {
 
-                 adapter = new FocusHasBeenAdapter(MyApp.getContext());
-                 adapter.setBean(response);
-                 listView.setAdapter(adapter);
-             }
+                adapter = new FocusHasBeenAdapter(MyApp.getContext());
+                adapter.setBean(response);
+                listView.setAdapter(adapter);
+            }
 
-             @Override
-             public void onError(Throwable ex) {
+            @Override
+            public void onError(Throwable ex) {
 
-             }
-         });
+            }
+        });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        goTo(MyApp.getContext(), DetailsActivity.class);
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }
