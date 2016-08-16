@@ -2,6 +2,7 @@ package com.example.dllo.keepproject.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,7 @@ public class FindFmTrendsGvAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+       // Log.d("FindFmTrendsGvAdapter", "position:" + position);
         FindFmTrendsGvHolder holder = null;
         if (convertView == null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item_fragment_find_trends_gv,parent,false);
