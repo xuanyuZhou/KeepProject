@@ -1,7 +1,10 @@
 package com.example.dllo.keepproject.ui.fragment;
 
+import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -10,6 +13,7 @@ import com.example.dllo.keepproject.model.bean.FocusGroupBean;
 import com.example.dllo.keepproject.model.bean.UrlBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
+import com.example.dllo.keepproject.ui.activity.GroupDetailsActivity;
 import com.example.dllo.keepproject.ui.adapter.FocusGroupAdapter;
 import com.example.dllo.keepproject.ui.app.MyApp;
 import com.example.dllo.keepproject.view.MyCustomListView;
@@ -21,7 +25,7 @@ import java.util.Map;
  * Created by dllo on 16/8/12.
  * 关注 - 小组
  */
-public class FocusGroupFragment extends AbsBaseFragment {
+public class FocusGroupFragment extends AbsBaseFragment implements AdapterView.OnItemClickListener {
     private LinearLayout noJoinLayout;
     private MyCustomListView groupLV;
     private FocusGroupAdapter groupAdapter;
@@ -41,6 +45,7 @@ public class FocusGroupFragment extends AbsBaseFragment {
     @Override
     protected void setListeners() {
 
+        groupLV.setOnItemClickListener(this);
 
     }
 
@@ -82,5 +87,14 @@ public class FocusGroupFragment extends AbsBaseFragment {
 
             }
         } );
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Bundle bundle = new Bundle();
+        FocusGroupBean bean = (FocusGroupBean) parent.getItemAtPosition(position);
+        bundle.putString("url","http://api.gotokeep.com/v1.1/group/"+bean.getData().getRecommended().get(position).getId());
+        Log.d("FocusGroupFragment", "bean:" + bean);
+        goTo(context, GroupDetailsActivity.class,bundle);
     }
 }

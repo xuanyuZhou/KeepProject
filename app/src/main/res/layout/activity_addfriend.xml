@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout style="@style/titleBar_style">
+
+        <ImageView
+            android:id="@+id/addfriend_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@mipmap/run_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="添加好友"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/search_glass" />
+
+        <EditText
+            android:id="@+id/addfriend_Searched"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/addfriend_fromPhone"
+        style="@style/addfriendLayout">
+
+        <ImageView
+            style="@style/addfriendImag"
+            android:src="@mipmap/phone_add" />
+
+        <LinearLayout style="@style/addfriendTVLayout">
+
+            <TextView
+                style="@style/addfriendTvone"
+                android:text="已连接通讯录" />
+
+            <TextView
+                style="@style/addfriendTvTWO"
+                android:text="发现更多通讯录好友" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/addfriendImageLine"
+            android:layout_marginLeft="150dp" />
+    </LinearLayout>
+
+    <View style="@style/smallLine" />
+
+    <LinearLayout style="@style/addfriendLayout"
+        android:id="@+id/addfriend_fromWeibo">
+
+        <ImageView
+            style="@style/addfriendImag"
+            android:src="@mipmap/icon_screenshot_share_weibo_off" />
+
+        <LinearLayout style="@style/addfriendTVLayout">
+
+            <TextView
+                style="@style/addfriendTvone"
+                android:text="未连接新浪微博" />
+
+            <TextView
+                style="@style/addfriendTvTWO"
+                android:text="发现更多微博关注的人" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/addfriendImageLine"
+            android:layout_marginLeft="135dp" />
+    </LinearLayout>
+
+    <View style="@style/smallLine" />
+    <LinearLayout
+
+        android:id="@+id/addfriend_fromWechat"
+        style="@style/addfriendLayout">
+
+        <ImageView
+            style="@style/addfriendImag"
+            android:src="@mipmap/wechat_add" />
+
+        <LinearLayout
+
+            style="@style/addfriendTVLayout">
+
+            <TextView
+                style="@style/addfriendTvone"
+                android:text="微信" />
+
+            <TextView
+                style="@style/addfriendTvTWO"
+                android:text="邀请微信好友" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/addfriendImageLine"
+            android:layout_marginLeft="180dp" />
+    </LinearLayout>
+
+    <View style="@style/smallLine" />
+    <LinearLayout
+        android:id="@+id/addfriend_fromQQ"
+        style="@style/addfriendLayout">
+
+        <ImageView
+            style="@style/addfriendImag"
+            android:src="@mipmap/qq_add" />
+
+        <LinearLayout style="@style/addfriendTVLayout">
+
+            <TextView
+                style="@style/addfriendTvone"
+                android:text="QQ" />
+
+            <TextView
+                style="@style/addfriendTvTWO"
+                android:text="邀请QQ好友" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/addfriendImageLine"
+            android:layout_marginLeft="185dp" />
+    </LinearLayout>
+
+    <View style="@style/smallLine" />
+    <LinearLayout
+        android:id="@+id/addfriend_from_ranklist"
+        style="@style/addfriendLayout">
+
+        <ImageView
+            style="@style/addfriendImag"
+            android:src="@mipmap/ranklist" />
+
+        <LinearLayout style="@style/addfriendTVLayout">
+
+            <TextView
+                style="@style/addfriendTvone"
+                android:text="排行榜" />
+
+            <TextView
+                style="@style/addfriendTvTWO"
+                android:text="本月最佳用户" />
+        </LinearLayout>
+
+        <ImageView
+            style="@style/addfriendImageLine"
+            android:layout_marginLeft="180dp" />
+    </LinearLayout>
+
+    <View style="@style/smallLine" />
+</LinearLayout>
