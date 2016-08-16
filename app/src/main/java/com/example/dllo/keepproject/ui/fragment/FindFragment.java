@@ -1,9 +1,13 @@
 package com.example.dllo.keepproject.ui.fragment;
 
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +19,9 @@ import com.example.dllo.keepproject.model.bean.FindFmrecommendBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.activity.BigMoveViewPageActivity;
+import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
+import com.example.dllo.keepproject.ui.activity.TopicActivity;
 import com.example.dllo.keepproject.ui.adapter.FindFmSelectionLvAdapter;
 import com.example.dllo.keepproject.ui.adapter.FindFmTrendsGvAdapter;
 import com.example.dllo.keepproject.ui.adapter.FindRecommendRvAdapter;
@@ -27,8 +33,9 @@ import java.util.Map;
 /**
  * Created by dllo on 16/8/11.
  */
-public class BigMoveFindFragment extends AbsBaseFragment implements View.OnClickListener {
+public class FindFragment extends AbsBaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
     private ImageView keepIv;
+    private LinearLayout topicLayout;
     private TextView nameTv;
     private TextView userNameTv;
     private TextView sourceTv;
@@ -48,6 +55,7 @@ public class BigMoveFindFragment extends AbsBaseFragment implements View.OnClick
     private String selectionsUrl = "http://api.gotokeep.com/v1.1/favorites/folders?type=pin";
     private FindFmSelectionLvAdapter selectionLvAdapter;
     private FindRecommendRvAdapter recommendRvAdapter;
+    private FindFmTrendsBean trendsBean;
 
     @Override
     protected int setLayout() {
@@ -56,6 +64,7 @@ public class BigMoveFindFragment extends AbsBaseFragment implements View.OnClick
 
     @Override
     protected void initView() {
+        topicLayout = byView(R.id.find_fragment_topic);
         nameTv = byView(R.id.find_fragment_selection_Tv);
         photoIv = byView(R.id.find_fragment_selection_Iv);
         userNameTv = byView(R.id.find_fragment_recommend_username);
@@ -78,6 +87,8 @@ public class BigMoveFindFragment extends AbsBaseFragment implements View.OnClick
     protected void setListeners() {
         goToIv.setOnClickListener(this);
         keepIv.setOnClickListener(this);
+        topicLayout.setOnClickListener(this);
+        myCustomGridView.setOnItemClickListener(this);
 
     }
 
@@ -167,6 +178,7 @@ public class BigMoveFindFragment extends AbsBaseFragment implements View.OnClick
         tool.startRequest(trendsUrl, FindFmTrendsBean.class, gvHeadMap, new OnHttpCallback<FindFmTrendsBean>() {
             @Override
             public void onSuccess(FindFmTrendsBean response) {
+                trendsBean = response;
                 trendsGvAdapter = new FindFmTrendsGvAdapter(context);
                 trendsGvAdapter.setDatas(response);
                 myCustomGridView.setAdapter(trendsGvAdapter);
@@ -185,11 +197,24 @@ public class BigMoveFindFragment extends AbsBaseFragment implements View.OnClick
         switch (v.getId()) {
             case R.id.find_fragment_selection_goTo_Iv:
                 goTo(context, FindSelectionsActivity.class);
-
                 break;
+
             case R.id.find_fragment_keep_goToIv:
                 goTo(context, BigMoveViewPageActivity.class);
                 break;
+
+            case R.id.find_fragment_topic:
+                goTo(context, TopicActivity.class);
+                break;
+
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Bundle bundle = new Bundle();
+//      trendsBean = (FindFmTrendsBean) parent.getItemAtPosition(position);
+        bundle.putString("url", "http://api.gotokeep.com/v1.1/entries/" + trendsBean.getData().get(position).get_id() + "?limit=20&reverse=true");
+        goTo(context, DynamicSingleActivity.class, bundle);
     }
 }

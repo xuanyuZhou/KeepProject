@@ -28,6 +28,10 @@
             android:theme="@style/NoBar"/>
         <activity android:name=".ui.activity.BigMoveViewPageActivity"
             android:theme="@style/NoBar"/>
+        <activity android:name=".ui.activity.TopicActivity"
+            android:theme="@style/NoBar"/>
+        <activity android:name=".ui.activity.DynamicSingleActivity"
+            android:theme="@style/NoBar"/>
 
     </application>
 

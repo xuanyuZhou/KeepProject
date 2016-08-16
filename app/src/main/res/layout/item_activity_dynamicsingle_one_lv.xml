@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/dynamicsSingle_one_avatarIv"
+        android:layout_margin="10dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+        android:layout_marginTop="20dp"
+        android:text="seri_wang"
+        android:textSize="13dp"
+        android:textColor="@android:color/black"
+        android:id="@+id/dynamicsSingle_one_usernameIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:text="2015-06-081213131231231"
+            android:maxEms="5"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textSize="12dp"
+            android:id="@+id/dynamicsSingle_one_createdIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+        <ImageView
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="25dp"
+            android:background="@mipmap/follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>
+    <TextView
+        android:id="@+id/dynamicsSingle_one_contentTv"
+        android:layout_margin="10dp"
+        android:textSize="15sp"
+        android:text="啦啦啦阿拉拉了啦啦啦阿拉拉了啦啦啦阿拉拉了啦啦啦阿拉拉了啦啦啦阿拉拉了"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/dynamicsSingle_one_photoIv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View style="@style/smallLine" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="55dp"
+            android:background="@mipmap/icon_hot_tag_recommend_praise"
+            android:textSize="13dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:background="#DCDCDC" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:background="@mipmap/reply"
+            android:textSize="13dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:background="#DCDCDC" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="55dp"
+            android:background="@mipmap/timeline_share"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <View style="@style/midLine" />
+
+
+</LinearLayout>
