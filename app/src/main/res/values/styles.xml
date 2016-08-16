@@ -31,6 +31,7 @@
 </style>
     <!--RadioButton_style-->
     <style name="radioBtn_style">
+        <item name="android:textSize">10sp</item>
         <item name="android:layout_margin">3dp</item>
         <item name="android:textColor">@drawable/selector_rb_text_color</item>
         <item name="android:gravity">center</item>
