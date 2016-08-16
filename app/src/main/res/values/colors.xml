@@ -6,4 +6,7 @@
     <color name="colorHui">#534B5B</color>
     <color name="colorBai">#FFFFFF</color>
     <color name="colorGreen">#24C789</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorCreateSchedule">#31A56E</color>
+    <color name="colorQianHui">#DCDCDC</color>
 </resources>

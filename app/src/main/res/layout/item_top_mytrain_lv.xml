@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--图-->
+        <ImageView
+            android:id="@+id/myTrain_lvTop_BgImageIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/testphoto" />
+        <!--计划名-->
+        <TextView
+            android:id="@+id/myTrain_lvTop_nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="五维腹肌训练计划66"
+            android:textColor="@color/colorBai"
+            android:textSize="20sp" />
+        <!--进度-->
+        <TextView
+            android:textSize="12sp"
+            android:id="@+id/myTrain_lvTop_progressTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="第 6/6 节"
+            android:textColor="@color/colorBai" />
+        <!--时常与消耗-->
+        <TextView
+            android:textSize="12sp"
+            android:id="@+id/myTrain_lvTop_calorieTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="10dp"
+            android:text="13分钟,41千卡"
+            android:textColor="@color/colorBai" />
+    </RelativeLayout>
+</LinearLayout>

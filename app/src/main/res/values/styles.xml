@@ -5,7 +5,11 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorHui</item>
         <item name="colorPrimaryDark">@color/colorHui</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorQianHui</item>
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">@color/colorQianHui</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">@color/colorQianHui</item>
     </style>
 
     <!--去掉原生标题栏-->
@@ -31,6 +35,7 @@
 </style>
     <!--RadioButton_style-->
     <style name="radioBtn_style">
+        <item name="android:textSize">10sp</item>
         <item name="android:layout_margin">3dp</item>
         <item name="android:textColor">@drawable/selector_rb_text_color</item>
         <item name="android:gravity">center</item>
@@ -60,4 +65,53 @@
         <item name="android:layout_height">9dp</item>
         <item name="android:background">#DCDCDC</item>
     </style>
+
+    <!--添加好友的 layout布局-->
+    <style name="addfriendLayout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--添加好友的 图片布局-->
+    <style name="addfriendImag">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+  <!--添加好友的 文字layout-->
+    <style name="addfriendTVLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--添加好友的 第一个文字-->
+
+    <style name="addfriendTvone">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <!--添加好友的 第二个文字-->
+  <style name="addfriendTvTWO">
+      <item name="android:layout_width">wrap_content</item>
+      <item name="android:layout_height">wrap_content</item>
+      <item name="android:layout_marginLeft">5dp</item>
+      <item name="android:textColor">@android:color/darker_gray</item>
+      <item name="android:textSize">10sp</item>
+  </style>
+
+
+    <!--添加好友的图片 折线-->
+    <style name="addfriendImageLine">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@mipmap/settings_arrow</item>
+    </style>
+
+
 </resources>

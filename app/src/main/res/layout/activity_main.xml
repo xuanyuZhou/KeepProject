@@ -15,6 +15,7 @@
     <View style="@style/smallLine" />
 
     <RadioGroup
+        android:background="@color/colorBai"
         android:id="@+id/mainAty_radioGroup"
         android:layout_width="match_parent"
         android:layout_height="50dp"
