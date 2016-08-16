@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.dllo.keepproject.R;
+import com.example.dllo.keepproject.ui.activity.AddFriendActivity;
 import com.example.dllo.keepproject.ui.adapter.FocusPagerAdapter;
+import com.example.dllo.keepproject.ui.app.MyApp;
 
 import java.util.ArrayList;
 
@@ -96,5 +98,10 @@ public class FocusFragment extends AbsBaseFragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
 
+        switch (v.getId()){
+            case R.id.focus_addFriend:
+                goTo(MyApp.getContext(), AddFriendActivity.class);
+                break;
+        }
     }
 }

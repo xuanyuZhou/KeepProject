@@ -1,6 +1,7 @@
 package com.example.dllo.keepproject.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,7 @@ public class FindRecommendRvAdapter extends RecyclerView.Adapter<FindRecommendRv
     public void onBindViewHolder(RecommendRvHolder holder, int position) {
         holder.usernameTv.setText(datas.getData().get(position).getUser().getUsername());
         holder.sourceTv.setText(datas.getData().get(position).getSource());
-        Picasso.with(context).load(datas.getData().get(position).getUser().getAvatar()).into(holder.avatarIv);
+        Picasso.with(context).load(datas.getData().get(position).getUser().getAvatar()).resize(120,120).into(holder.avatarIv);
 
     }
 

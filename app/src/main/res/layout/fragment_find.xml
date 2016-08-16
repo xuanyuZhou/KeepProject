@@ -34,8 +34,18 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@mipmap/create_schedule_up"></FrameLayout>
+                android:layout_height="180dp">
+                <ImageView
+                    android:background="@mipmap/create_schedule_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/find_fragment_keep_goToIv"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/keepfive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
 
             <View style="@style/midLine" />
 
@@ -63,7 +73,7 @@
                         android:layout_marginLeft="25dp"
                         android:layout_marginTop="2dp"
                         android:text="话题"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -85,7 +95,7 @@
                         android:layout_marginLeft="25dp"
                         android:layout_marginTop="2dp"
                         android:text="同城"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -107,7 +117,7 @@
                         android:layout_marginLeft="25dp"
                         android:layout_marginTop="2dp"
                         android:text="小组"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -129,7 +139,7 @@
                         android:layout_marginLeft="25dp"
                         android:layout_marginTop="2dp"
                         android:text="商城"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -190,6 +200,34 @@
                 android:id="@+id/find_fragment_recommend_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            <View style="@style/midLine" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="精选动态"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/find_fragment_trends_goTo_Iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="250dp"
+                    android:background="@mipmap/settings_arrow" />
+            </LinearLayout>
+            <com.example.dllo.keepproject.view.MyCustomGridView
+                android:id="@+id/find_fragment_recommend_gv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="2"></com.example.dllo.keepproject.view.MyCustomGridView>
 
 
         </LinearLayout>

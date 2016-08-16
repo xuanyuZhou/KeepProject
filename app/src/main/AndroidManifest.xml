@@ -26,6 +26,14 @@
 
         <activity android:name=".ui.activity.FindSelectionsActivity"
             android:theme="@style/NoBar"/>
+        <activity android:name=".ui.activity.BigMoveViewPageActivity"
+            android:theme="@style/NoBar"/>
+
+        <activity android:name=".ui.activity.DetailsActivity"/>
+        <activity android:name=".ui.activity.AddFriendActivity"
+            android:theme="@style/NoBar" />
+        <activity android:name=".ui.activity.GroupDetailsActivity"
+            android:theme="@style/NoBar"/>
 
     </application>
 

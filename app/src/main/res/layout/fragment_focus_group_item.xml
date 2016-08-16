@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginLeft="10dp"
+    >
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:id="@+id/focus_group_headImage"
+    android:layout_marginTop="10dp"
+    android:src="@mipmap/ic_launcher"
+    android:layout_width="40dp"
+    android:layout_height="40dp" />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/focus_group_title"
+            android:layout_margin="4dp"
+            android:text="keep健身100天"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+ <LinearLayout
+     android:layout_marginLeft="4dp"
+     android:orientation="horizontal"
+     android:layout_width="match_parent"
+     android:layout_height="20dp">
+     <TextView
+         android:textColor="@android:color/darker_gray"
+         android:id="@+id/focus_group_member"
+         android:text="102458成员"
+         android:textSize="10dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+     <TextView
+         android:textColor="@android:color/darker_gray"
+         android:id="@+id/focus_group_cards"
+         android:layout_marginLeft="10dp"
+         android:text="78512帖子"
+         android:textSize="10dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+ </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

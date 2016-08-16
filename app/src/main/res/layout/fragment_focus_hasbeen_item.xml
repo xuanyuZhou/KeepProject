@@ -3,18 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorBai"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:descendantFocusability="afterDescendants">
+    <View
+        style="@style/midLine" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/focus_hasbeen_item_headImage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@mipmap/ic_launcher" />
 
         <LinearLayout
@@ -29,13 +31,13 @@
                 android:layout_margin="5dp"
                 android:text="阿离"
                 android:textColor="@color/colorHui"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/focus_hasbeen_item_addressTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:text="地区"
                 android:textColor="#5B5B5B"
                 android:textSize="10sp" />
@@ -46,30 +48,35 @@
 
     </LinearLayout>
 
+
     <TextView
+        android:maxLines="5"
         android:id="@+id/focus_hasbeen_item_contentTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:text="若你足够优秀,自会有人珍惜"
-        android:textColor="#5B5B5B" />
-
+        android:textColor="@android:color/black" />
     <TextView
-        android:id="@+id/focus_hasbeen_item_greenContentTv"
+        android:layout_marginTop="5dp"
+        android:textSize="10sp"
+        android:id="@+id/focus_hasbeen_item_contentTv_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#5B5B5B" />
-
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorHui"  />
     <ImageView
+        android:scaleType="centerCrop"
         android:id="@+id/focus_hasbeen_item_contentImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_height="match_parent"
         android:layout_margin="13dp"
         android:src="@mipmap/ic_launcher" />
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="20dp"
@@ -77,10 +84,11 @@
 
         <TextView
             android:id="@+id/focus_hasbeen_item_likeCountTv"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:drawableLeft="@mipmap/icon_hot_tag_recommend_praise"
             android:drawablePadding="10dp"
+
             android:text="695"
             android:textColor="@android:color/darker_gray" />
 
@@ -88,28 +96,41 @@
             android:id="@+id/focus_hasbeen_item_reviewTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+
             android:drawableLeft="@mipmap/icon_hot_tag_recommend_reply"
             android:drawablePadding="10dp"
             android:text="695"
-            android:textColor="@android:color/darker_gray" />
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp"
+            android:layout_alignBottom="@+id/focus_hasbeen_item_more"
+            android:layout_toRightOf="@+id/focus_hasbeen_item_likeCountTv"
+            android:layout_toEndOf="@+id/focus_hasbeen_item_likeCountTv" />
 
         <ImageView
+
             android:id="@+id/focus_hasbeen_item_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
             android:drawablePadding="10dp"
-            android:src="@mipmap/timeline_share" />
+            android:src="@mipmap/timeline_share"
+            android:layout_alignTop="@+id/focus_hasbeen_item_reviewTv"
+            android:layout_toRightOf="@+id/focus_hasbeen_item_reviewTv"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp" />
 
         <ImageView
+
             android:id="@+id/focus_hasbeen_item_more"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="80dp"
-            android:src="@mipmap/share_more" />
-    </LinearLayout>
+            android:src="@mipmap/share_more"
+            android:layout_marginRight="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
 
-    <View style="@style/midLine" />
 
 </LinearLayout>
