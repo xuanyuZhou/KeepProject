@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso;
 
 /**
  * Created by dllo on 16/8/12.
+ * 精选合集适配器
  */
 public class FindFmSelectionLvAdapter extends BaseAdapter {
     private int TYPE = 1;

@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/8/15.
+ * 热门话题的解析类
  */
 public class TopicActivityBean {
 

@@ -22,6 +22,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/8/13.
+ * 大图里面3个图和一个的页面
  */
 public class BigMovePagerFragment extends Fragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout style="@style/titleBar_style">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="keep精选"
+            android:textColor="@color/colorBai"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/photoAlbum_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@mipmap/run_back" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/photoAlbum_viewPager"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="520dp">
+
+    </android.support.v4.view.ViewPager>
+    <com.example.dllo.keepproject.view.MyTestView
+        android:layout_gravity="bottom"
+        android:id="@+id/photoAlbum_myTestView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+</FrameLayout>

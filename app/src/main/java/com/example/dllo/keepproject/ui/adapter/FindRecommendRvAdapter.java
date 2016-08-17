@@ -15,6 +15,7 @@ import com.squareup.picasso.Picasso;
 
 /**
  * Created by dllo on 16/8/12.
+ * 推荐用户适配器
  */
 public class FindRecommendRvAdapter extends RecyclerView.Adapter<FindRecommendRvAdapter.RecommendRvHolder>{
     private FindFmrecommendBean datas;

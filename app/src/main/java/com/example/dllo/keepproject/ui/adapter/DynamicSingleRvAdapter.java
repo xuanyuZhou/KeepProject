@@ -14,6 +14,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by dllo on 16/8/16.
+ * 点击精选动态跳转的二级界面的rv适配器
  */
 public class DynamicSingleRvAdapter extends RecyclerView.Adapter<DynamicSingleRvAdapter.DynamicSingleRvTwoHolder> {
     private Context context;

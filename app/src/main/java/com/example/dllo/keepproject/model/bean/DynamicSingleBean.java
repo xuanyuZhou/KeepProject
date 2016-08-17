@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/8/15.
+ * 动态单品的数据类
  */
 public class DynamicSingleBean {
 

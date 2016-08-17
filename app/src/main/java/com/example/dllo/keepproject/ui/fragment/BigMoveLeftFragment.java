@@ -7,6 +7,8 @@ import com.example.dllo.keepproject.R;
 
 /**
  * Created by dllo on 16/8/13.
+ * 大图里面左边的图
+ *
  */
 public class BigMoveLeftFragment extends AbsBaseFragment{
 

@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * Created by dllo on 16/8/12.
+ * 这里是精选合集的activity
  */
 public class FindSelectionsActivity extends AbsBaseActivity implements OnHttpCallback<FindFmSelectionBean>, View.OnClickListener {
     private ImageView backIv;

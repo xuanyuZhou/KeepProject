@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * Created by dllo on 16/8/15.
+ * 这里是热门话题的activity
  */
 public class TopicActivity extends AbsBaseActivity implements View.OnClickListener, OnHttpCallback<TopicActivityBean> {
     private TextView nameTv;

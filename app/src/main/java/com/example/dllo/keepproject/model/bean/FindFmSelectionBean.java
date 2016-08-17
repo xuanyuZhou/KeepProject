@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/8/12.
+ * 这里是精选合集的数据类
  */
 public class FindFmSelectionBean {
 

@@ -26,10 +26,13 @@
 
         <activity android:name=".ui.activity.FindSelectionsActivity"
             android:theme="@style/NoBar"/>
+        <!--这里是我的大图viewpager的界面-->
         <activity android:name=".ui.activity.BigMoveViewPageActivity"
             android:theme="@style/NoBar"/>
+        <!--这里是Findfragment,话题的二级界面-->
         <activity android:name=".ui.activity.TopicActivity"
             android:theme="@style/NoBar"/>
+        <!--这里是findfragment,点击下面的lv进入的动态详情二级界面-->
         <activity android:name=".ui.activity.DynamicSingleActivity"
             android:theme="@style/NoBar"/>
 
@@ -37,6 +40,9 @@
         <activity android:name=".ui.activity.AddFriendActivity"
             android:theme="@style/NoBar" />
         <activity android:name=".ui.activity.GroupDetailsActivity"
+            android:theme="@style/NoBar"/>
+        <!--这里是自定义相册的Activity-->
+        <activity android:name=".ui.activity.PhotoAlbumActivity"
             android:theme="@style/NoBar"/>
 
     </application>

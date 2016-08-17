@@ -5,6 +5,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,11 +19,13 @@ import com.example.dllo.keepproject.R;
 import com.example.dllo.keepproject.model.bean.FindFmSelectionBean;
 import com.example.dllo.keepproject.model.bean.FindFmTrendsBean;
 import com.example.dllo.keepproject.model.bean.FindFmrecommendBean;
+import com.example.dllo.keepproject.model.bean.UrlBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.activity.BigMoveViewPageActivity;
 import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
+import com.example.dllo.keepproject.ui.activity.PhotoAlbumActivity;
 import com.example.dllo.keepproject.ui.activity.TopicActivity;
 import com.example.dllo.keepproject.ui.adapter.FindFmSelectionLvAdapter;
 import com.example.dllo.keepproject.ui.adapter.FindFmTrendsGvAdapter;
@@ -32,9 +37,17 @@ import java.util.Map;
 
 /**
  * Created by dllo on 16/8/11.
+ * 第二个页面发现的页面
  */
 public class FindFragment extends AbsBaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
     private ImageView keepIv;
+    private ImageView findFragmentKeepOneIv;
+    private ImageView findFragmentKeepTwoIv;
+    private ImageView findFragmentKeepThreeIv;
+    private ImageView findFragmentKeepFourIv;
+    private ImageView findFragmentKeepFiveIv;
+    private ImageView findFragmentKeepSixIv;
+
     private LinearLayout topicLayout;
     private TextView nameTv;
     private TextView userNameTv;
@@ -50,9 +63,9 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private RecyclerView recommmendRv;
     private MyCustomGridView myCustomGridView;
     private FindFmTrendsGvAdapter trendsGvAdapter;
-    private String trendsUrl = "http://api.gotokeep.com/v1.1/timeline/hot";
-    private String recommendUrl = "http://api.gotokeep.com/v1.1/rankinglist/user/recommend";
-    private String selectionsUrl = "http://api.gotokeep.com/v1.1/favorites/folders?type=pin";
+    private String trendsUrl = UrlBean.TRENDS_URL;
+    private String recommendUrl = UrlBean.RECOMMEND_URL;
+    private String selectionsUrl = UrlBean.SELECTIONS_URL;
     private FindFmSelectionLvAdapter selectionLvAdapter;
     private FindRecommendRvAdapter recommendRvAdapter;
     private FindFmTrendsBean trendsBean;
@@ -79,6 +92,13 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         seletionsListView = byView(R.id.find_fragment_selection_Lv);
         recommmendRv = byView(R.id.find_fragment_recommend_rv);
         keepIv = byView(R.id.find_fragment_keep_goToIv);
+        findFragmentKeepOneIv = byView(R.id.find_fragment_keepOne);
+        findFragmentKeepTwoIv = byView(R.id.find_fragment_keepTwo);
+        findFragmentKeepThreeIv = byView(R.id.find_fragment_keepThree);
+        findFragmentKeepFourIv = byView(R.id.find_fragment_keepFour);
+        findFragmentKeepFiveIv = byView(R.id.find_fragment_keepFive);
+        findFragmentKeepSixIv = byView(R.id.find_fragment_keepSix);
+
 
 
     }
@@ -90,6 +110,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         topicLayout.setOnClickListener(this);
         myCustomGridView.setOnItemClickListener(this);
 
+
     }
 
     @Override
@@ -97,6 +118,56 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         initFindRvData();
         initFindLvData();
         initFindGvData();
+        // 这里是keep动画效果 渐变效果~稳稳的
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.1f,1.0f);
+        alphaAnimation.setDuration(1200);
+        alphaAnimation.setRepeatCount(Animation.INFINITE);
+        alphaAnimation.setRepeatMode(Animation.REVERSE);
+        keepIv.setAnimation(alphaAnimation);
+        alphaAnimation.start();
+        // 左摇摆
+        TranslateAnimation translateAnimation = new TranslateAnimation(20f,450f,50,50);
+        translateAnimation.setDuration(3000);
+        translateAnimation.setRepeatCount(Animation.INFINITE);
+        translateAnimation.setRepeatMode(Animation.REVERSE);
+        findFragmentKeepOneIv.setAnimation(translateAnimation);
+        translateAnimation.start();
+        // 左摇摆
+        TranslateAnimation translateAnimation2 = new TranslateAnimation(20f,450f,50,50);
+        translateAnimation2.setDuration(2800);
+        translateAnimation2.setRepeatCount(Animation.INFINITE);
+        translateAnimation2.setRepeatMode(Animation.REVERSE);
+        findFragmentKeepThreeIv.setAnimation(translateAnimation2);
+        translateAnimation2.start();
+        // 左摇摆
+        TranslateAnimation translateAnimation5 = new TranslateAnimation(20f,450f,50,50);
+        translateAnimation5.setDuration(2600);
+        translateAnimation5.setRepeatCount(Animation.INFINITE);
+        translateAnimation5.setRepeatMode(Animation.REVERSE);
+        findFragmentKeepFiveIv.setAnimation(translateAnimation5);
+        translateAnimation5.start();
+
+        // 右摇摆
+        TranslateAnimation translateAnimation1 = new TranslateAnimation(20f,-450f,50,50);
+        translateAnimation1.setDuration(3000);
+        translateAnimation1.setRepeatCount(Animation.INFINITE);
+        translateAnimation1.setRepeatMode(Animation.REVERSE);
+        findFragmentKeepTwoIv.setAnimation(translateAnimation1);
+        translateAnimation1.start();
+        // 右摇摆
+        TranslateAnimation translateAnimation4 = new TranslateAnimation(20f,-450f,50,50);
+        translateAnimation4.setDuration(2800);
+        translateAnimation4.setRepeatCount(Animation.INFINITE);
+        translateAnimation4.setRepeatMode(Animation.REVERSE);
+        findFragmentKeepFourIv.setAnimation(translateAnimation4);
+        translateAnimation4.start();
+        // 右摇摆
+        TranslateAnimation translateAnimation6 = new TranslateAnimation(20f,-450f,50,50);
+        translateAnimation6.setDuration(2600);
+        translateAnimation6.setRepeatCount(Animation.INFINITE);
+        translateAnimation6.setRepeatMode(Animation.REVERSE);
+        findFragmentKeepSixIv.setAnimation(translateAnimation6);
+        translateAnimation6.start();
 
     }
 
@@ -206,6 +277,8 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
             case R.id.find_fragment_topic:
                 goTo(context, TopicActivity.class);
                 break;
+
+
 
         }
     }

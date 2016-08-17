@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/8/13.
+ * 这里是我的大图的activity
  */
 public class BigMoveViewPageActivity extends AbsBaseActivity implements IScrollListener,IViewPagerCurrent{
 

@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso;
 
 /**
  * Created by dllo on 16/8/13.
+ * 精选动态适配器
  */
 public class FindFmTrendsGvAdapter extends BaseAdapter{
     private FindFmTrendsBean datas;
