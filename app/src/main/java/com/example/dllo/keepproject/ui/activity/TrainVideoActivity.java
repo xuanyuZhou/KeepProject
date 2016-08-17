@@ -1,6 +1,5 @@
 package com.example.dllo.keepproject.ui.activity;
 
-import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Handler;
@@ -54,7 +53,8 @@ public class TrainVideoActivity extends AbsBaseActivity {
     private void initVideo() {
         trainMediaPlayer = MediaPlayer.create(this, Uri.parse(audioUrl));
         trainVideoView.setVideoURI(Uri.parse(url));
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        // 横屏
+        //this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         trainMediaPlayer.start();
         trainVideoView.start();
