@@ -53,7 +53,7 @@ public class PhotoAlbumActivity extends AbsBaseActivity implements View.OnClickL
         datas.add(new PhotoAlbumBean(R.mipmap.keepfour));
         datas.add(new PhotoAlbumBean(R.mipmap.keepxxx));
         datas.add(new PhotoAlbumBean(R.mipmap.keepsix));
-        datas.add(new PhotoAlbumBean(R.mipmap.keepseven));
+       // datas.add(new PhotoAlbumBean(R.mipmap.keepseven));
 
 
         viewPagerAdapter = new PhotoAlbumViewPagerAdapter(this);

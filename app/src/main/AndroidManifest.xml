@@ -44,6 +44,12 @@
         <!--这里是自定义相册的Activity-->
         <activity android:name=".ui.activity.PhotoAlbumActivity"
             android:theme="@style/NoBar"/>
+        <!--这里是自定义精选相册的Activity-->
+        <activity android:name=".ui.activity.SelectPhotoActivity"
+            android:theme="@style/NoBar"/>
+        <!--这里是自定义精选相册的详情的Activity-->
+        <activity android:name=".ui.activity.SelectPhotoSingActivity"
+            android:theme="@style/NoBar"/>
 
     </application>
 

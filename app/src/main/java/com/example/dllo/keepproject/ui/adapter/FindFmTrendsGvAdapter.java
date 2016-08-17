@@ -60,7 +60,7 @@ public class FindFmTrendsGvAdapter extends BaseAdapter{
         holder.contentTv.setText(datas.getData().get(position).getContent());
         holder.commentTv.setText(String.valueOf(datas.getData().get(position).getComments()));
         holder.likesTv.setText(String.valueOf(datas.getData().get(position).getLikes()));
-        Picasso.with(context).load(datas.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).into(holder.photoIv);
+        Picasso.with(context).load(datas.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).resize(300,300).into(holder.photoIv);
         return convertView;
     }
     class FindFmTrendsGvHolder{

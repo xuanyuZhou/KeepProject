@@ -26,6 +26,7 @@ import com.example.dllo.keepproject.ui.activity.BigMoveViewPageActivity;
 import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
 import com.example.dllo.keepproject.ui.activity.PhotoAlbumActivity;
+import com.example.dllo.keepproject.ui.activity.SelectPhotoActivity;
 import com.example.dllo.keepproject.ui.activity.TopicActivity;
 import com.example.dllo.keepproject.ui.adapter.FindFmSelectionLvAdapter;
 import com.example.dllo.keepproject.ui.adapter.FindFmTrendsGvAdapter;
@@ -47,8 +48,8 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private ImageView findFragmentKeepFourIv;
     private ImageView findFragmentKeepFiveIv;
     private ImageView findFragmentKeepSixIv;
-
     private LinearLayout topicLayout;
+    private TextView selectPhotoGoToTv;
     private TextView nameTv;
     private TextView userNameTv;
     private TextView sourceTv;
@@ -98,6 +99,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         findFragmentKeepFourIv = byView(R.id.find_fragment_keepFour);
         findFragmentKeepFiveIv = byView(R.id.find_fragment_keepFive);
         findFragmentKeepSixIv = byView(R.id.find_fragment_keepSix);
+        selectPhotoGoToTv = byView(R.id.selectphoto_gotoTv);
 
 
 
@@ -109,6 +111,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         keepIv.setOnClickListener(this);
         topicLayout.setOnClickListener(this);
         myCustomGridView.setOnItemClickListener(this);
+        selectPhotoGoToTv.setOnClickListener(this);
 
 
     }
@@ -276,6 +279,10 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
 
             case R.id.find_fragment_topic:
                 goTo(context, TopicActivity.class);
+                break;
+
+            case R.id.selectphoto_gotoTv:
+                goTo(context, SelectPhotoActivity.class);
                 break;
 
 
