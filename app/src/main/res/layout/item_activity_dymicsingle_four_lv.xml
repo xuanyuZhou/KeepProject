@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/dynamicsSingle_four_avatarIv"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/dynamicsSingle_four_username"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:text="我是小壮汉"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dynamicsSingle_four_avatarIv"
+        android:layout_toRightOf="@+id/dynamicsSingle_four_avatarIv"
+        android:layout_toEndOf="@+id/dynamicsSingle_four_avatarIv" />
+    <TextView
+        android:id="@+id/dynamicsSingle_four_modified"
+        android:maxEms="5"
+        android:lines="1"
+        android:textSize="12dp"
+        android:text="2156589556585658"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dynamicsSingle_four_username"
+        android:layout_alignLeft="@+id/dynamicsSingle_four_username"
+        android:layout_alignStart="@+id/dynamicsSingle_four_username" />
+
+    <ImageView
+        android:background="@mipmap/replyaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_toLeftOf="@+id/imageView"
+        android:layout_toStartOf="@+id/imageView"
+        android:layout_marginRight="31dp"
+        android:layout_marginEnd="31dp" />
+    <ImageView
+        android:background="@mipmap/comment_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dynamicsSingle_four_modified"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="29dp"
+        android:layout_marginEnd="29dp"
+        android:id="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/dynamicsSingle_four_contentTv"
+        android:text="很棒  我关注你了"
+        android:textSize="13sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dynamicsSingle_four_avatarIv"
+        android:layout_alignLeft="@+id/dynamicsSingle_four_modified"
+        android:layout_alignStart="@+id/dynamicsSingle_four_modified"
+        android:layout_marginTop="10dp" />
+    <View
+       style="@style/smallLine"
+        android:layout_below="@+id/dynamicsSingle_four_contentTv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+</RelativeLayout>

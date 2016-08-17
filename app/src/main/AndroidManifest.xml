@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name=".ui.activity.WelcomeActivity"
-            android:theme="@style/NoBar"></activity>
+            android:theme="@style/NoBar"/>
         <activity
             android:name=".ui.activity.FindSelectionsActivity"
             android:theme="@style/NoBar" />
@@ -37,9 +37,30 @@
         <activity
             android:name=".ui.activity.GroupDetailsActivity"
             android:theme="@style/NoBar" />
+
+        <activity
+            android:name=".ui.activity.FindSelectionsActivity"
+            android:theme="@style/NoBar" />
+        <activity
+            android:name=".ui.activity.BigMoveViewPageActivity"
+            android:theme="@style/NoBar" />
+        <activity
+            android:name=".ui.activity.TopicActivity"
+            android:theme="@style/NoBar" />
+        <activity
+            android:name=".ui.activity.DynamicSingleActivity"
+            android:theme="@style/NoBar" />
+
+        <activity
+            android:name=".ui.activity.DetailsActivity"
+            android:theme="@style/NoBar" />
+        <activity
+            android:name=".ui.activity.AddFriendActivity"
+            android:theme="@style/NoBar" />
         <!--训练进去放视频的activity-->
-        <activity android:name=".ui.activity.TrainVideoActivity"
-            android:theme="@style/NoBar"/>
+        <activity
+            android:name=".ui.activity.TrainVideoActivity"
+            android:theme="@style/NoBar" />
 
     </application>
 
