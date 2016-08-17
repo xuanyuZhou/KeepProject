@@ -3,6 +3,7 @@ package com.example.dllo.keepproject.ui.fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.dllo.keepproject.R;
@@ -14,6 +15,7 @@ import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.model.net.VolleyInstance;
 import com.example.dllo.keepproject.model.net.VolleyPort;
+import com.example.dllo.keepproject.ui.activity.TrainVideoActivity;
 import com.example.dllo.keepproject.ui.adapter.TrainFmMyTrainLvAdapter;
 import com.example.dllo.keepproject.view.MyCustomListView;
 import com.google.gson.Gson;
@@ -28,7 +30,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by dllo on 16/8/11.
  * 训练页fragment
  */
-public class TrainFragment extends AbsBaseFragment {
+public class TrainFragment extends AbsBaseFragment implements AdapterView.OnItemClickListener {
     // 训练参数和好友排行组件定义
     private CircleImageView leftAvatarCiv, midAvatarCiv, rightAvatarCiv;
     private TextView totalDurationTv, totalTrainingTv, totalTrainingDayTv, totalCalorieTv, ranKingTv;
@@ -63,7 +65,7 @@ public class TrainFragment extends AbsBaseFragment {
 
     @Override
     protected void setListeners() {
-
+        myTrainLv.setOnItemClickListener(this);
     }
 
     @Override
@@ -177,5 +179,11 @@ public class TrainFragment extends AbsBaseFragment {
 
             }
         });
+    }
+
+    // 训练列表listView点击时间
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        goTo(context, TrainVideoActivity.class);
     }
 }

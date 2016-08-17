@@ -16,23 +16,29 @@
             android:theme="@style/NoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".ui.activity.WelcomeActivity" android:theme="@style/NoBar">
-        </activity>
-
-        <activity android:name=".ui.activity.FindSelectionsActivity"
-            android:theme="@style/NoBar"/>
-        <activity android:name=".ui.activity.BigMoveViewPageActivity"
-            android:theme="@style/NoBar"/>
-
-        <activity android:name=".ui.activity.DetailsActivity"/>
-        <activity android:name=".ui.activity.AddFriendActivity"
+        <activity
+            android:name=".ui.activity.WelcomeActivity"
+            android:theme="@style/NoBar"></activity>
+        <activity
+            android:name=".ui.activity.FindSelectionsActivity"
             android:theme="@style/NoBar" />
-        <activity android:name=".ui.activity.GroupDetailsActivity"
+        <activity
+            android:name=".ui.activity.BigMoveViewPageActivity"
+            android:theme="@style/NoBar" />
+        <activity
+            android:name=".ui.activity.DetailsActivity"
+            android:theme="@style/NoBar" />
+        <activity
+            android:name=".ui.activity.AddFriendActivity"
+            android:theme="@style/NoBar" />
+        <activity
+            android:name=".ui.activity.GroupDetailsActivity"
+            android:theme="@style/NoBar" />
+        <!--训练进去放视频的activity-->
+        <activity android:name=".ui.activity.TrainVideoActivity"
             android:theme="@style/NoBar"/>
 
     </application>
