@@ -50,6 +50,8 @@
         <!--这里是自定义精选相册的详情的Activity-->
         <activity android:name=".ui.activity.SelectPhotoSingActivity"
             android:theme="@style/NoBar"/>
+        <activity android:name=".ui.activity.CityActivity"
+            android:theme="@style/NoBar"/>
 
     </application>
 

@@ -19,7 +19,8 @@
             android:id="@+id/selectphoto_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
             android:background="@mipmap/run_back" />
     </RelativeLayout>
 

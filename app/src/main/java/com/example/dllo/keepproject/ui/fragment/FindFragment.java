@@ -1,5 +1,6 @@
 package com.example.dllo.keepproject.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,6 +24,7 @@ import com.example.dllo.keepproject.model.bean.UrlBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.activity.BigMoveViewPageActivity;
+import com.example.dllo.keepproject.ui.activity.CityActivity;
 import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
 import com.example.dllo.keepproject.ui.activity.PhotoAlbumActivity;
@@ -60,6 +62,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private TextView gvLikesTv;
     private TextView gvCommentTv;
     private ImageView gvPhotoIv;
+    private LinearLayout localGoToLayout;
     private ListView seletionsListView;
     private RecyclerView recommmendRv;
     private MyCustomGridView myCustomGridView;
@@ -100,6 +103,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         findFragmentKeepFiveIv = byView(R.id.find_fragment_keepFive);
         findFragmentKeepSixIv = byView(R.id.find_fragment_keepSix);
         selectPhotoGoToTv = byView(R.id.selectphoto_gotoTv);
+        localGoToLayout = byView(R.id.find_fragment_local_goToIv);
 
 
 
@@ -112,6 +116,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         topicLayout.setOnClickListener(this);
         myCustomGridView.setOnItemClickListener(this);
         selectPhotoGoToTv.setOnClickListener(this);
+        localGoToLayout.setOnClickListener(this);
 
 
     }
@@ -262,6 +267,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
             public void onError(Throwable ex) {
 
             }
+
         });
     }
 
@@ -283,6 +289,10 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
 
             case R.id.selectphoto_gotoTv:
                 goTo(context, SelectPhotoActivity.class);
+                break;
+
+            case R.id.find_fragment_local_goToIv:
+                goTo(context, CityActivity.class);
                 break;
 
 

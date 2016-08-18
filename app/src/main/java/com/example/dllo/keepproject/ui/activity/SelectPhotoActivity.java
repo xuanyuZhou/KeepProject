@@ -3,6 +3,7 @@ package com.example.dllo.keepproject.ui.activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.dllo.keepproject.R;
@@ -14,10 +15,11 @@ import java.util.ArrayList;
  * Created by dllo on 16/8/17.
  * 这里是精选相册的activity
  */
-public class SelectPhotoActivity extends AbsBaseActivity{
+public class SelectPhotoActivity extends AbsBaseActivity implements View.OnClickListener {
     private ArrayList<String> strings;
     private SelectPhotoLvAdapter lvAdapter;
     private ListView listView;
+    private ImageView selectPhotoBack;
     @Override
     protected int setLayout() {
         return R.layout.activity_selectphoto;
@@ -26,11 +28,13 @@ public class SelectPhotoActivity extends AbsBaseActivity{
     @Override
     protected void initView() {
         listView = byView(R.id.selectphoto_lv);
+        selectPhotoBack = byView(R.id.selectphoto_back);
 
     }
 
     @Override
     protected void initListeners() {
+        selectPhotoBack.setOnClickListener(this);
 
     }
 
@@ -70,5 +74,15 @@ public class SelectPhotoActivity extends AbsBaseActivity{
             }
         });
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.selectphoto_back:
+                finish();
+                break;
+
+        }
     }
 }

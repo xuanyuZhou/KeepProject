@@ -9,4 +9,9 @@
     <color name="colorBlack">#000000</color>
     <color name="colorCreateSchedule">#31A56E</color>
     <color name="colorQianHui">#DCDCDC</color>
+    <color name="color_ccc">#CCC</color>
+    <color name="error_color">#534B5B</color>
+    <color name="font_text">#666</color>
+    <color name="font_info">#999</color>
+    <color name="white">#fff</color>
 </resources>

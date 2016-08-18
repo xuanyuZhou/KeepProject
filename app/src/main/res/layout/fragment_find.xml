@@ -122,12 +122,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/find_fragment_local_goToIv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <ImageView
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
@@ -172,18 +174,18 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="15dp"
+                        android:layout_height="18dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="15dp"
-                        android:src="@mipmap/find_tab_mall" />
+                        android:src="@mipmap/k_sticker_on" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="25dp"
                         android:layout_marginTop="2dp"
-                        android:text="商城"
+                        android:text="娱乐"
                         android:textSize="13sp" />
                 </LinearLayout>
 
