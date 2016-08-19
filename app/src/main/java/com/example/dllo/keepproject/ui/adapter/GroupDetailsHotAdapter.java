@@ -2,7 +2,6 @@ package com.example.dllo.keepproject.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,23 +10,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dllo.keepproject.R;
-import com.example.dllo.keepproject.model.bean.GroupNewsBean;
+import com.example.dllo.keepproject.model.bean.GroupHotBean;
+
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Created by dllo on 16/8/16.
+ * Created by dllo on 16/8/19.
+ * 小组详情页面 - 热门的适配器
  */
-public class GroupDetailsNewsAndHotAdapter extends BaseAdapter {
-    private GroupNewsBean bean;
+public class GroupDetailsHotAdapter extends BaseAdapter {
+    private GroupHotBean bean;
     private Context context;
 
-    public GroupDetailsNewsAndHotAdapter(Context context) {
+    public GroupDetailsHotAdapter(Context context) {
         this.context = context;
     }
 
-    public void setBean(GroupNewsBean bean) {
+    public void setBean(GroupHotBean bean) {
         this.bean = bean;
         notifyDataSetChanged();
     }
@@ -71,9 +72,9 @@ public class GroupDetailsNewsAndHotAdapter extends BaseAdapter {
             holder.userHead.setImageResource(R.mipmap.take_icon);
         }
         // 用户名
-       if (!bean.getData().get(position).getAuthor().getUsername().isEmpty()){
-           holder.userTv.setText(bean.getData().get(position).getAuthor().getUsername());
-       }
+        if (!bean.getData().get(position).getAuthor().getUsername().isEmpty()){
+            holder.userTv.setText(bean.getData().get(position).getAuthor().getUsername());
+        }
         // 内容
         if (!bean.getData().get(position).getContent().isEmpty()){
             holder.contentTv.setVisibility(View.VISIBLE);
