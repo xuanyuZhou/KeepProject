@@ -101,6 +101,9 @@ public class FocusFragment extends AbsBaseFragment implements View.OnClickListen
         switch (v.getId()){
             case R.id.focus_addFriend:
                 goTo(MyApp.getContext(), AddFriendActivity.class);
+                // 前一页消失的动画 后一页出现的动画
+                //getActivity().overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+
                 break;
         }
     }
