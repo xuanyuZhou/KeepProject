@@ -26,6 +26,7 @@ import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.activity.BigMoveViewPageActivity;
 import com.example.dllo.keepproject.ui.activity.CityActivity;
 import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
+import com.example.dllo.keepproject.ui.activity.EntertainmentActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
 import com.example.dllo.keepproject.ui.activity.PhotoAlbumActivity;
 import com.example.dllo.keepproject.ui.activity.SelectPhotoActivity;
@@ -57,6 +58,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private TextView sourceTv;
     private ImageView avatarIv;
     private ImageView photoIv;
+    private LinearLayout entertainmentActivityGoTo;
     private ImageView goToIv;
     private TextView gvContentTv;
     private TextView gvLikesTv;
@@ -104,6 +106,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         findFragmentKeepSixIv = byView(R.id.find_fragment_keepSix);
         selectPhotoGoToTv = byView(R.id.selectphoto_gotoTv);
         localGoToLayout = byView(R.id.find_fragment_local_goToIv);
+        entertainmentActivityGoTo = byView(R.id.entertainment_activity_goTo);
 
 
 
@@ -117,6 +120,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         myCustomGridView.setOnItemClickListener(this);
         selectPhotoGoToTv.setOnClickListener(this);
         localGoToLayout.setOnClickListener(this);
+        entertainmentActivityGoTo.setOnClickListener(this);
 
 
     }
@@ -294,6 +298,10 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
             case R.id.find_fragment_local_goToIv:
                 goTo(context, CityActivity.class);
                 break;
+
+            case R.id.entertainment_activity_goTo:
+                goTo(context, EntertainmentActivity.class);
+
 
 
 
