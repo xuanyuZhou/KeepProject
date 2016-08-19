@@ -1,5 +1,6 @@
 package com.example.dllo.keepproject.ui.fragment;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -10,6 +11,7 @@ import com.example.dllo.keepproject.model.bean.UrlBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.activity.DetailsActivity;
+import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.adapter.FocusHasBeenAdapter;
 import com.example.dllo.keepproject.ui.app.MyApp;
 import com.example.dllo.keepproject.view.MyCustomListView;
@@ -57,15 +59,15 @@ public class FocusHasBeenFragment extends AbsBaseFragment implements AdapterView
     }
 
     public void initHasBeenData() {
-        Map<String,String> headMap = new HashMap<>();
-        headMap.put("x-device-id","000000000000000080027f482c2111119b127f0a");
-        headMap.put("X-KEEP-FROM","android");
-        headMap.put("X-KEEP-TIMEZONE","America/New_York");
-        headMap.put("X-KEEP-CHANNEL"," bdss02");
-        headMap.put("X-KEEP-VERSION","3.8.1");
-        headMap.put("Authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1N2FkMWM4MjFiY2M1YjJlMTg2NTA4YzAiLCJ1c2VybmFtZSI6IumYv-emu-emu-WViiIsImF2YXRhciI6IiIsImlhdCI6MTQ3MDk4OTY4NCwiZXhwIjoxNDczNTgxNjg0LCJpc3MiOiJodHRwOi8vd3d3LmdvdG9rZWVwLmNvbS8ifQ.Jf1lL81CMcsuu4-xRstXnRVOGAcXKifndx7pYQl3v3Q");
-        headMap.put("Host","api.gotokeep.com");
-        headMap.put("Connection","Keep-Alive");
+        Map<String, String> headMap = new HashMap<>();
+        headMap.put("x-device-id", "000000000000000080027ab241a11111b0927a74");
+        headMap.put("X-KEEP-FROM", "android");
+        headMap.put("X-KEEP-TIMEZONE", "America/New_York");
+        headMap.put("X-KEEP-CHANNEL", " bdss02");
+        headMap.put("X-KEEP-VERSION", "3.8.1");
+        headMap.put("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1N2FkMWM4MjFiY2M1YjJlMTg2NTA4YzAiLCJ1c2VybmFtZSI6IumYv-emu-emu-WViiIsImF2YXRhciI6IiIsImlhdCI6MTQ3MDk4OTY4NCwiZXhwIjoxNDczNTgxNjg0LCJpc3MiOiJodHRwOi8vd3d3LmdvdG9rZWVwLmNvbS8ifQ.Jf1lL81CMcsuu4-xRstXnRVOGAcXKifndx7pYQl3v3Q");
+        headMap.put("Host", "api.gotokeep.com");
+        headMap.put("Connection", "Keep-Alive");
         DlaHttp tool = DlaHttp.getInstance();
 
         tool.startRequest(UrlBean.HAS_BEEN_URL, FocusHasBeenBean.class, headMap, new OnHttpCallback<FocusHasBeenBean>() {
@@ -86,7 +88,11 @@ public class FocusHasBeenFragment extends AbsBaseFragment implements AdapterView
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        goTo(MyApp.getContext(), DetailsActivity.class);
+        Bundle bundle = new Bundle();
+        FocusHasBeenBean.DataBean bean = (FocusHasBeenBean.DataBean) parent.getItemAtPosition(position);
+        bundle.putString("url", "http://api.gotokeep.com/v1.1/entries/" + bean.get_id() + "?limit=20&reverse=true");
+        goTo(context, DynamicSingleActivity.class,bundle);
+
     }
 
     @Override

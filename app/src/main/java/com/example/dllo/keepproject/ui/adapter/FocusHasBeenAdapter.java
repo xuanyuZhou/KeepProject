@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.dllo.keepproject.R;
 import com.example.dllo.keepproject.model.bean.FocusHasBeenBean;
 import com.example.dllo.keepproject.ui.activity.DetailsActivity;
+import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.activity.WelcomeActivity;
 import com.example.dllo.keepproject.ui.app.MyApp;
 import com.squareup.picasso.Picasso;
@@ -162,16 +163,16 @@ public class FocusHasBeenAdapter extends BaseAdapter {
                         finalHolder.allTv.setText("全部");
                     }
                 });
-                if (lineCount > 5) {
-                    holder.allTv.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(context, DetailsActivity.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                            context.startActivity(intent);
-                        }
-                    });
-                }
+//                if (lineCount > 5) {
+//                    holder.allTv.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            Intent intent = new Intent(context, DynamicSingleActivity.class);
+//                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+//                            context.startActivity(intent);
+//                        }
+//                    });
+//                }
 
                 holder.likeCountTv.setText(String.valueOf(bean.getData().get(position).getLikes()));
                 holder.reviewTv.setText(String.valueOf(bean.getData().get(position).getComments()));
@@ -236,15 +237,14 @@ public class FocusHasBeenAdapter extends BaseAdapter {
                         }
                     }
                 });
-                finalTwoHolder.allTwoTv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(context, "fsfaf", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(context, DetailsActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                        context.startActivity(intent);
-                    }
-                });
+//                finalTwoHolder.allTwoTv.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Intent intent = new Intent(context, DynamicSingleActivity.class);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+//                        context.startActivity(intent);
+//                    }
+//                });
                 twoHolder.likeCountTwoTv.setText(String.valueOf(bean.getData().get(position).getLikes()));
                 twoHolder.reviewTwoTv.setText(String.valueOf(bean.getData().get(position).getComments()));
                 break;

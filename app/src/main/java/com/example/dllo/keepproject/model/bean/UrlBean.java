@@ -17,7 +17,9 @@ public class UrlBean {
      * 训练页,我的训练listView接口
      */
     public static final String TRAIN_MY_TRAIN_LV_URL = "http://api.gotokeep.com/v1.1/home/dashboard/pwData";
-
+    /**
+     * 发现页 已关注接口
+     */
     public static final String HAS_BEEN_URL = "http://api.gotokeep.com/v1.1/timeline/followings";
 
     /**

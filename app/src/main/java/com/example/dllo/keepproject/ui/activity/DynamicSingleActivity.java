@@ -35,7 +35,7 @@ public class DynamicSingleActivity extends AbsBaseActivity implements OnHttpCall
     private ListView dynamicListView;
     private DynamicSingleLvAdapter dynamicSingleLvAdapter;
     private ImageView dynamicBack;
-    private String dynamicUrl = "http://api.gotokeep.com/v1.1/entries/57b12042aefd06e20c4cacba?limit=20&reverse=true";
+    private String dynamicUrl ;
     @Override
     protected int setLayout() {
         return R.layout.activity_dynamicsingle;
@@ -64,7 +64,7 @@ public class DynamicSingleActivity extends AbsBaseActivity implements OnHttpCall
     @Override
     protected void initDatas() {
         Map<String,String> headMap = new HashMap<>();
-        headMap.put("x-device-id","000000000000000080027dfd41d11111b0c27dbf");
+        headMap.put("x-device-id","000000000000000080027ab241a11111b0927a74");
         headMap.put("X-KEEP-FROM","android");
         headMap.put("X-KEEP-TIMEZONE","America/New_York");
         headMap.put("X-KEEP-CHANNEL","baidu");

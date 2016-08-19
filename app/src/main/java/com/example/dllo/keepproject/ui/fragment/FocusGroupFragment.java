@@ -60,7 +60,7 @@ public class FocusGroupFragment extends AbsBaseFragment implements AdapterView.O
 
     public void initGroupData() {
         Map<String, String> headMap = new HashMap<>();
-        headMap.put("x-device-id", "000000000000000080027f482c2111119b127f0a");
+        headMap.put("x-device-id", "000000000000000080027ab241a11111b0927a74");
         headMap.put("X-KEEP-FROM", "android");
         headMap.put("X-KEEP-TIMEZONE", "America/New_York");
         headMap.put("X-KEEP-CHANNEL", " bdss02");
