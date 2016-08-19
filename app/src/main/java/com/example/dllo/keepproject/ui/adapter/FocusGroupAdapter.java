@@ -1,6 +1,7 @@
 package com.example.dllo.keepproject.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +58,7 @@ public class FocusGroupAdapter extends BaseAdapter {
             holder = (GroupViewHolder) convertView.getTag();
         }
 
-        Picasso.with(context).load(bean.getData().getRecommended().get(position).getAvatar()).into(holder.headImage);
+        Picasso.with(context).load(bean.getData().getRecommended().get(position).getAvatar()).config(Bitmap.Config.RGB_565).resize(200,200).into(holder.headImage);
         holder.titleTv.setText(bean.getData().getRecommended().get(position).getGroupName());
         holder.groupMember.setText(String.valueOf(bean.getData().getRecommended().get(position).getMemberCount())+"成员");
         holder.groupCards.setText(String.valueOf(bean.getData().getRecommended().get(position).getTotalEntries())+"帖子");
