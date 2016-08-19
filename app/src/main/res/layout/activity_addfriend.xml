@@ -8,11 +8,8 @@
     <RelativeLayout style="@style/titleBar_style">
 
         <ImageView
-            android:id="@+id/addfriend_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:src="@mipmap/run_back" />
+            style="@style/back"
+            android:id="@+id/addfriend_back" />
 
         <TextView
             android:layout_width="wrap_content"

@@ -1,8 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <!--小组详情页布局-->
+<!--CoordinatorLayout 协调布局-->
+<!--处于协调布局的组件 按其给定的属性进行协调宽高-->
+<!--利用协调布局完成的效果是折叠标题栏-->
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!--折叠标题栏 - APP工具栏布局-->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- CollapsingToolbar 可折叠的工具栏-->
+        <!--app:contentScrim="" 设置颜色-->
+        <!-- app:expandedTitleTextAppearance="@style/collsize"
+            app:collapsedTitleTextAppearance="@style/colltwosize"
+            设置文字开始大小和完事后的大小-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/group_details_coll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/colltwosize"
+            app:contentScrim="@color/colorHui"
+            app:expandedTitleMarginStart="100dp"
+
+            app:expandedTitleTextAppearance="@style/collsize"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <!--滑动上方的图片和文字-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_marginTop="-100dp"
+                    android:id="@+id/group_details_contentImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="170dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/group_details_member"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102458成员"
+                        android:textColor="@android:color/white"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/group_details_cards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="78512帖子"
+                        android:textColor="@android:color/white"
+                        android:textSize="10dp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.Toolbar
+
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark">
+                <!--这里面放的是我的标题栏-->
+
+
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/group_details_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/white" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/group_details_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+</android.support.design.widget.CoordinatorLayout>
 
 
 
-</LinearLayout>
+

@@ -40,6 +40,7 @@
         <activity android:name=".ui.activity.AddFriendActivity"
             android:theme="@style/NoBar" />
         <activity android:name=".ui.activity.GroupDetailsActivity"
+
             android:theme="@style/NoBar"/>
         <!--这里是自定义相册的Activity-->
         <activity android:name=".ui.activity.PhotoAlbumActivity"
@@ -52,6 +53,8 @@
             android:theme="@style/NoBar"/>
         <activity android:name=".ui.activity.CityActivity"
             android:theme="@style/NoBar"/>
+
+
 
     </application>
 
