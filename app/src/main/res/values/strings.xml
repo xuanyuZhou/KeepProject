@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">感觉身体被掏空,营养快线要跟上</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
