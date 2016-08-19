@@ -3,6 +3,7 @@ package com.example.dllo.keepproject.ui.adapter;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.provider.Settings;
 import android.text.SpannableString;
@@ -117,7 +118,7 @@ public class FocusHasBeenAdapter extends BaseAdapter {
         switch (type) {
             case TYPE_1:
                 holder.allTv.setVisibility(View.GONE);
-                Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).into(holder.headImage);
+                Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).config(Bitmap.Config.RGB_565).resize(200,200).into(holder.headImage);
                 holder.userNameTv.setText(bean.getData().get(position).getAuthor().getUsername());
                 holder.addressTv.setText(bean.getData().get(position).getCity());
                // holder.contentTv.setText(bean.getData().get(position).getContent());
@@ -125,7 +126,7 @@ public class FocusHasBeenAdapter extends BaseAdapter {
                 // 第一种行布局中 如果有照片的话就显示出来
                 if (!bean.getData().get(position).getPhoto().isEmpty()) {
                     holder.contentImage.setVisibility(View.VISIBLE);
-                    Picasso.with(context).load(bean.getData().get(position).getPhoto()).into(holder.contentImage);
+                    Picasso.with(context).load(bean.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).resize(700,1000).into(holder.contentImage);
                 } else {
                     holder.contentImage.setVisibility(View.GONE);
                 }
@@ -179,7 +180,7 @@ public class FocusHasBeenAdapter extends BaseAdapter {
             case TYPE_2:
 
                 twoHolder.allTwoTv.setVisibility(View.GONE);
-                Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).into(twoHolder.headTwoImage);
+                Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).config(Bitmap.Config.RGB_565).resize(200,200).into(twoHolder.headTwoImage);
                 twoHolder.userNameTwoTv.setText(bean.getData().get(position).getAuthor().getUsername());
                 twoHolder.addressTwoTv.setText(bean.getData().get(position).getCity());
                 //twoHolder.contentTwoTv.setText(bean.getData().get(position).getContent());
@@ -190,7 +191,7 @@ public class FocusHasBeenAdapter extends BaseAdapter {
                 // 如果得到的照片不为空 显示图片的Image显示,否则隐藏
                 if (!bean.getData().get(position).getPhoto().isEmpty()) {
                     twoHolder.contentTwoImage.setVisibility(View.VISIBLE);
-                    Picasso.with(context).load(bean.getData().get(position).getPhoto()).into(twoHolder.contentTwoImage);
+                    Picasso.with(context).load(bean.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).resize(800,800).into(twoHolder.contentTwoImage);
                 } else {
                     twoHolder.contentTwoImage.setVisibility(View.GONE);
                 }

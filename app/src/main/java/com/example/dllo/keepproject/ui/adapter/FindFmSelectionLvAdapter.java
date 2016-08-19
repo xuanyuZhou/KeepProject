@@ -1,6 +1,7 @@
 package com.example.dllo.keepproject.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.squareup.picasso.Picasso;
 
 /**
  * Created by dllo on 16/8/12.
+ * 精选合集适配器
  */
 public class FindFmSelectionLvAdapter extends BaseAdapter {
     private int TYPE = 1;
@@ -60,7 +62,7 @@ public class FindFmSelectionLvAdapter extends BaseAdapter {
             lvHolder = (FindFmSelectionsLvHolder) convertView.getTag();
         }
         lvHolder.nameTv.setText(data.getData().get(position).getName());
-        Picasso.with(context).load(data.getData().get(position).getPhoto()).into(lvHolder.photoTv);
+        Picasso.with(context).load(data.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).resize(800,360).into(lvHolder.photoTv);
         return convertView;
     }
     class FindFmSelectionsLvHolder{

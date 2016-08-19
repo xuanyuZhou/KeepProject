@@ -22,6 +22,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/8/13.
+ * 大图里面3个图和一个的页面
  */
 public class BigMovePagerFragment extends Fragment implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
@@ -63,7 +64,7 @@ public class BigMovePagerFragment extends Fragment implements ViewPager.OnPageCh
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         horizontalViewPager = (HorizontalViewPager) contentView.findViewById(R.id.horizontal_pager);
-        horizontalViewPager.setBackGround(BitmapFactory.decodeResource(getResources(), R.mipmap.changtuthree));
+        horizontalViewPager.setBackGround(BitmapFactory.decodeResource(getResources(), R.mipmap.changtu));
         initViewPagerSpeed();
         BigMoveLeftFragment bigMoveLeftFragment = new BigMoveLeftFragment();
         BigMoveRightFragment bigMoveRightFragment = new BigMoveRightFragment();

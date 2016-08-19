@@ -12,6 +12,8 @@
         <item name="colorControlActivated">@color/colorQianHui</item>
     </style>
 
+
+
     <!--去掉原生标题栏-->
     <style name="NoBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorHui</item>
@@ -113,5 +115,20 @@
         <item name="android:background">@mipmap/settings_arrow</item>
     </style>
 
+<!--返回按钮-->
 
+    <style name="back">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:src">@mipmap/run_back</item>
+    </style>
+
+    <!--coll大小-->
+<style name="collsize">
+    <item name="android:textSize">18sp</item>
+</style>
+    <style name="colltwosize">
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

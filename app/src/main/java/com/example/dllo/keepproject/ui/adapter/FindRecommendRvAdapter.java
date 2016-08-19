@@ -15,6 +15,7 @@ import com.squareup.picasso.Picasso;
 
 /**
  * Created by dllo on 16/8/12.
+ * 推荐用户适配器
  */
 public class FindRecommendRvAdapter extends RecyclerView.Adapter<FindRecommendRvAdapter.RecommendRvHolder>{
     private FindFmrecommendBean datas;
@@ -41,7 +42,7 @@ public class FindRecommendRvAdapter extends RecyclerView.Adapter<FindRecommendRv
     public void onBindViewHolder(RecommendRvHolder holder, int position) {
         holder.usernameTv.setText(datas.getData().get(position).getUser().getUsername());
         holder.sourceTv.setText(datas.getData().get(position).getSource());
-        Picasso.with(context).load(datas.getData().get(position).getUser().getAvatar()).resize(120,120).into(holder.avatarIv);
+        Picasso.with(context).load(datas.getData().get(position).getUser().getAvatar()).config(Bitmap.Config.RGB_565).resize(120,120).into(holder.avatarIv);
 
     }
 

@@ -19,6 +19,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by dllo on 16/8/15.
+ * 点击精选动态跳转的二级界面的lv适配器
  */
 public class DynamicSingleLvAdapter extends BaseAdapter {
     private DynamicSingleBean datas;

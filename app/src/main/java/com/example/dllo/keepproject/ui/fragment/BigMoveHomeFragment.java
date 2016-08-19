@@ -7,6 +7,7 @@ import com.example.dllo.keepproject.R;
 
 /**
  * Created by dllo on 16/8/13.
+ * 大图里面中间的图
  */
 public class BigMoveHomeFragment extends AbsBaseFragment{
     private View contentView;

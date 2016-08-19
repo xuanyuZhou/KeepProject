@@ -38,13 +38,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="180dp">
                 <ImageView
-                    android:background="@mipmap/create_schedule_up"
+                    android:background="@mipmap/changtutwo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
                 <ImageView
                     android:id="@+id/find_fragment_keep_goToIv"
                     android:layout_gravity="center"
-                    android:src="@mipmap/keepfive"
+                    android:src="@mipmap/sticker_moving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/find_fragment_keepTwo"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/find_fragment_keepOne"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/find_fragment_keepThree"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/find_fragment_keepFour"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/find_fragment_keepFive"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/find_fragment_keepSix"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/collect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </FrameLayout>
@@ -80,12 +122,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/find_fragment_local_goToIv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <ImageView
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
@@ -130,25 +174,68 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="15dp"
+                        android:layout_height="18dp"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="15dp"
-                        android:src="@mipmap/find_tab_mall" />
+                        android:src="@mipmap/k_sticker_on" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="25dp"
                         android:layout_marginTop="2dp"
-                        android:text="商城"
+                        android:text="娱乐"
                         android:textSize="13sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <View style="@style/midLine" />
-
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="精选相册"
+                    android:textSize="13sp" />
+                    <ImageView
+                        android:id="@+id/find_fragment_photo_goTo_Iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="250dp"
+                        android:background="@mipmap/settings_arrow" />
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp"
+                android:src="@mipmap/meitu"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+                    <TextView
+                        android:id="@+id/selectphoto_gotoTv"
+                        android:gravity="center"
+                        android:textColor="@color/colorBai"
+                        android:textSize="30sp"
+                        android:text="Don't give up"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </RelativeLayout>
+            </LinearLayout>
+            <View style="@style/midLine" />
 
             <LinearLayout
                 android:layout_width="match_parent"

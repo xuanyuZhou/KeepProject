@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso;
 
 /**
  * Created by dllo on 16/8/15.
+ * 热门话题的适配器
  */
 public class TopicActivityLvAdaptet extends BaseAdapter{
     private TopicActivityBean datas;

@@ -21,6 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by dllo on 16/8/15.
+ * 这里是我的动态单品详情的activity
  */
 public class DynamicSingleActivity extends AbsBaseActivity implements OnHttpCallback<DynamicSingleBean>, View.OnClickListener {
     private TextView contentTv;
