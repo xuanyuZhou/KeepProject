@@ -8,16 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <VideoView
+        <com.example.dllo.keepproject.view.DIYVideoView
             android:id="@+id/aty_train_videoView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <ImageView
+            android:id="@+id/aty_train_closeIv"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@mipmap/close"
-            android:id="@+id/imageView2" />
+            android:src="@mipmap/close" />
 
         <ImageView
             android:layout_width="40dp"
@@ -44,22 +44,45 @@
             android:src="@mipmap/lock_open_in_accompany" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="140dp"
             android:layout_height="70dp"
             android:layout_alignParentBottom="true"
             android:layout_margin="20dp"
-            android:src="@mipmap/connect"
-            android:id="@+id/imageView" />
-        
+            android:src="@mipmap/connect" />
+
         <ImageView
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="6dp"
-            android:src="@mipmap/ic_emoji_bg"
+            android:id="@+id/imageView2"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:layout_alignTop="@+id/imageView"
             android:layout_alignLeft="@+id/imageView"
-            android:layout_alignStart="@+id/imageView" />
+            android:layout_alignStart="@+id/imageView"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/ic_emoji_bg" />
 
+        <TextView
+            android:id="@+id/aty_train_timerTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView2"
+            android:layout_alignStart="@+id/imageView2"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="14dp"
+            android:text="0"
+            android:textColor="@color/colorBai"
+            android:textSize="20sp" />
+
+        <Chronometer
+            android:id="@+id/aty_train_timer_Chronometer"
+            android:layout_width="60dp"
+            android:layout_height="27dp"
+            android:textColor="@color/colorBai"
+            android:textSize="20sp"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView" />
     </RelativeLayout>
 </LinearLayout>

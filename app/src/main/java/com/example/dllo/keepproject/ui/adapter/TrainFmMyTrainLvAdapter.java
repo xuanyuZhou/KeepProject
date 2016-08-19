@@ -61,7 +61,8 @@ public class TrainFmMyTrainLvAdapter extends BaseAdapter {
         if (position < data.getData().getPlans().size() && data.getData().getPlans().size() != 0) {
             return data.getData().getPlans().get(position);
         } else {
-            return data.getData().getWorkouts().get(position);
+            // 这里返回的位置要减去上面集合的大小 否则数组越界
+            return data.getData().getWorkouts().get(position - data.getData().getPlans().size());
         }
     }
 
@@ -114,7 +115,7 @@ public class TrainFmMyTrainLvAdapter extends BaseAdapter {
                 downHolder.downCompletedTv.setText("已完成" + data.getData().getWorkouts().get((position - data.getData().getPlans().size())).getCompleted()
                         + "次训练");
                 downHolder.downCalorieTv.setText(data.getData().getWorkouts().get((position - data.getData().getPlans().size())).getWorkout().getDuration()
-                        +"分钟 " + data.getData().getWorkouts().get((position - data.getData().getPlans().size())).getWorkout().getCalorie() + "千卡");
+                        + "分钟 " + data.getData().getWorkouts().get((position - data.getData().getPlans().size())).getWorkout().getCalorie() + "千卡");
                 break;
         }
         return convertView;

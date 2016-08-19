@@ -1,5 +1,6 @@
 package com.example.dllo.keepproject.ui.fragment;
 
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,8 +101,8 @@ public class TrainFragment extends AbsBaseFragment implements AdapterView.OnItem
         tool.startRequest(UrlBean.TRAIN_MY_TRAIN_LV_URL, TrainFmMyTrainBean.class, headMap, new OnHttpCallback<TrainFmMyTrainBean>() {
             @Override
             public void onSuccess(TrainFmMyTrainBean response) {
-                View myTrainLvHeadView = LayoutInflater.from(context).inflate(R.layout.item_head_mytrain_lv,null);
-                View myTrainLvFootView = LayoutInflater.from(context).inflate(R.layout.item_foot_mytrain_lv,null);
+                View myTrainLvHeadView = LayoutInflater.from(context).inflate(R.layout.item_head_mytrain_lv, null);
+                View myTrainLvFootView = LayoutInflater.from(context).inflate(R.layout.item_foot_mytrain_lv, null);
                 myTrainLv.addHeaderView(myTrainLvHeadView);
                 myTrainLv.addFooterView(myTrainLvFootView);
                 myTrainLvAdapter = new TrainFmMyTrainLvAdapter(context);
@@ -167,7 +168,7 @@ public class TrainFragment extends AbsBaseFragment implements AdapterView.OnItem
             @Override
             public void stringSuccess(String result) {
                 Gson gson = new Gson();
-                TrainFmMyTrainBean bean = gson.fromJson(result,TrainFmMyTrainBean.class);
+                TrainFmMyTrainBean bean = gson.fromJson(result, TrainFmMyTrainBean.class);
                 Log.d("TrainFragment", bean.getData().getPlans().get(0).getPlan().getName());
                 myTrainLvAdapter = new TrainFmMyTrainLvAdapter(context);
                 myTrainLvAdapter.setData(bean);
@@ -184,6 +185,28 @@ public class TrainFragment extends AbsBaseFragment implements AdapterView.OnItem
     // 训练列表listView点击时间
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        goTo(context, TrainVideoActivity.class);
+        int type = parent.getAdapter().getItemViewType(position);
+        Bundle bundle = new Bundle();
+        Log.d("TrainFragment", "position:" + position);
+        switch (type) {
+            case 0:
+                TrainFmMyTrainBean.DataBean.PlansBean plansBean =
+                        (TrainFmMyTrainBean.DataBean.PlansBean) parent.getItemAtPosition(position);
+                bundle.putString("url", "http://api.gotokeep.com/v1.1/plans/" + plansBean.getPlan().get_id() + "?trainer_gender=M");
+                bundle.putInt("type",0);
+//                Log.d("TrainFragment", "http://api.gotokeep.com/v1.1/plans/" + plansBean.getPlan().get_id() + "?trainer_gender=M");
+//                Log.d("TrainFragment", plansBean.getPlan().getName());
+                goTo(context, TrainVideoActivity.class,bundle);
+                break;
+            case 1:
+                TrainFmMyTrainBean.DataBean.WorkoutsBean workoutsBean =
+                        (TrainFmMyTrainBean.DataBean.WorkoutsBean) parent.getItemAtPosition(position);
+                bundle.putString("url", "http://api.gotokeep.com/v1.1/workouts/" + workoutsBean.getWorkout().get_id() + "?trainer_gender=M");
+                bundle.putInt("type",1);
+//                Log.d("TrainFragment", "http://api.gotokeep.com/v1.1/workouts/" + workoutsBean.getWorkout().get_id() + "?trainer_gender=M");
+//                Log.d("TrainFragment", workoutsBean.getWorkout().getName());
+                goTo(context, TrainVideoActivity.class,bundle);
+                break;
+        }
     }
 }
