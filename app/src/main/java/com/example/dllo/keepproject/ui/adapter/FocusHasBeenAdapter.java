@@ -126,7 +126,7 @@ public class FocusHasBeenAdapter extends BaseAdapter {
                 // 第一种行布局中 如果有照片的话就显示出来
                 if (!bean.getData().get(position).getPhoto().isEmpty()) {
                     holder.contentImage.setVisibility(View.VISIBLE);
-                    Picasso.with(context).load(bean.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).resize(700,1000).into(holder.contentImage);
+                    Picasso.with(context).load(bean.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).into(holder.contentImage);
                 } else {
                     holder.contentImage.setVisibility(View.GONE);
                 }
@@ -191,7 +191,7 @@ public class FocusHasBeenAdapter extends BaseAdapter {
                 // 如果得到的照片不为空 显示图片的Image显示,否则隐藏
                 if (!bean.getData().get(position).getPhoto().isEmpty()) {
                     twoHolder.contentTwoImage.setVisibility(View.VISIBLE);
-                    Picasso.with(context).load(bean.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).resize(800,800).into(twoHolder.contentTwoImage);
+                    Picasso.with(context).load(bean.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).into(twoHolder.contentTwoImage);
                 } else {
                     twoHolder.contentTwoImage.setVisibility(View.GONE);
                 }
