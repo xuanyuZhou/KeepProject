@@ -50,7 +50,7 @@ public class FocusGroupAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
        GroupViewHolder holder = null;
         if (convertView == null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.fragment_focus_group_item,parent,false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_fragment_focus_group,parent,false);
             holder = new GroupViewHolder(convertView);
             convertView.setTag(holder);
         }

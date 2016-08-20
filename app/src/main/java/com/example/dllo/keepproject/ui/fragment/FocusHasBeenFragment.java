@@ -11,6 +11,7 @@ import com.example.dllo.keepproject.model.bean.UrlBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.activity.DetailsActivity;
+import com.example.dllo.keepproject.ui.activity.DynamicActivity;
 import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.adapter.FocusHasBeenAdapter;
 import com.example.dllo.keepproject.ui.app.MyApp;
@@ -97,6 +98,13 @@ public class FocusHasBeenFragment extends AbsBaseFragment implements AdapterView
 
     @Override
     public void onClick(View v) {
+
+        switch (v.getId()){
+            case R.id.focus_hasbeen_topic:
+                goTo(context, DynamicActivity.class);
+                getActivity().overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+                break;
+        }
 
     }
 }

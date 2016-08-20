@@ -25,7 +25,7 @@ public class UrlBean {
     /**
      * 小组接口
      */
-    public static final String GROUP_URL ="http://api.gotokeep.com/v1.1/group";
+    public static final String GROUP_URL = "http://api.gotokeep.com/v1.1/group";
     /**
      * 发现页 精选动态
      */
@@ -40,4 +40,16 @@ public class UrlBean {
      * 发现页 精选合集
      */
     public static final String SELECTIONS_URL = "http://api.gotokeep.com/v1.1/favorites/folders?type=pin";
+
+    /**
+     * 排行榜 贡献榜接口
+     */
+    public static final String MYRECOMMEND_URL = "http://api.gotokeep.com/v1.1/rankinglist/recommend";
+
+    /**
+     * 排行榜 新人榜接口
+     */
+    public static final String NEWSPEOPLE_URL = "http://api.gotokeep.com/v1.1/rankinglist/newbie";
+
+
 }

@@ -1,6 +1,5 @@
 package com.example.dllo.keepproject.ui.fragment;
 
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,8 +9,8 @@ import android.widget.ImageView;
 
 import com.example.dllo.keepproject.R;
 import com.example.dllo.keepproject.ui.activity.AddFriendActivity;
+import com.example.dllo.keepproject.ui.activity.NewsActivity;
 import com.example.dllo.keepproject.ui.adapter.FocusPagerAdapter;
-import com.example.dllo.keepproject.ui.app.MyApp;
 
 import java.util.ArrayList;
 
@@ -30,6 +29,7 @@ public class FocusFragment extends AbsBaseFragment implements View.OnClickListen
     private ImageView triangleImag;
     private ImageView groupImag;
 
+
     @Override
     protected int setLayout() {
         return R.layout.fragment_focus;
@@ -43,6 +43,7 @@ public class FocusFragment extends AbsBaseFragment implements View.OnClickListen
         focusViewPager = byView(R.id.focus_viewpager);
         triangleImag = byView(R.id.focus_Triangle_focusbeen);
         groupImag = byView(R.id.focus_Triangle_group);
+
 
     }
 
@@ -59,12 +60,12 @@ public class FocusFragment extends AbsBaseFragment implements View.OnClickListen
         fragments.add(new FocusHasBeenFragment());
         fragments.add(new FocusGroupFragment());
         focusPagerAdapter = new FocusPagerAdapter(getChildFragmentManager());
-        focusPagerAdapter.setArrayList(fragments);
+        focusPagerAdapter.setArrayList(fragments, 1);
         focusViewPager.setAdapter(focusPagerAdapter);
         focusTabLayout.setupWithViewPager(focusViewPager);
-        focusTabLayout.setTabTextColors(Color.argb(255,172,167,177),Color.WHITE);
-        focusTabLayout.setSelectedTabIndicatorColor(Color.argb(255,82,75,92));
-//        viewpager 的监听事件
+        focusTabLayout.setTabTextColors(Color.argb(255, 172, 167, 177), Color.WHITE);
+        focusTabLayout.setSelectedTabIndicatorColor(Color.argb(255, 82, 75, 92));
+        //viewpager 的监听事件 实现两个小三角.
         focusViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -73,12 +74,11 @@ public class FocusFragment extends AbsBaseFragment implements View.OnClickListen
 
             @Override
             public void onPageSelected(int position) {
-                if(focusTabLayout.getSelectedTabPosition() == 0){
+                if (focusTabLayout.getSelectedTabPosition() == 0) {
                     triangleImag.setVisibility(View.VISIBLE);
                     groupImag.setVisibility(View.GONE);
 
-                }
-                else {
+                } else {
                     groupImag.setVisibility(View.VISIBLE);
                     triangleImag.setVisibility(View.GONE);
                 }
@@ -92,18 +92,23 @@ public class FocusFragment extends AbsBaseFragment implements View.OnClickListen
         });
 
 
-
     }
 
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.focus_addFriend:
-                goTo(MyApp.getContext(), AddFriendActivity.class);
-                // 前一页消失的动画 后一页出现的动画
-                //getActivity().overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
 
+                goTo(context, AddFriendActivity.class);
+                // 参数1 进入动画 参数2 消失动画
+                getActivity().overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                break;
+
+            case R.id.focus_news:
+
+                goTo(context, NewsActivity.class);
+                getActivity().overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                 break;
         }
     }

@@ -15,16 +15,23 @@ import java.util.ArrayList;
 public class FocusPagerAdapter extends FragmentPagerAdapter {
     private ArrayList<Fragment> arrayList;
     private ArrayList<String> title;
+    private int type;
 
     public FocusPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
-    public void setArrayList(ArrayList<Fragment> arrayList) {
+    public void setArrayList(ArrayList<Fragment> arrayList, int type) {
         this.arrayList = arrayList;
         title = new ArrayList<>();
-        title.add("已关注");
-        title.add("小组");
+        if (type == 1) {
+            title.add("已关注");
+            title.add("小组");
+        }
+        else if (type == 2){
+            title.add("贡献榜");
+            title.add("新人榜");
+        }
     }
 
     @Override
@@ -34,7 +41,7 @@ public class FocusPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return arrayList!=null?arrayList.size():0;
+        return arrayList != null ? arrayList.size() : 0;
     }
 
     @Override

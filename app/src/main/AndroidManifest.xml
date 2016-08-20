@@ -3,6 +3,9 @@
     package="com.example.dllo.keepproject">
     <!--网络权限-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--获取通讯录信息权限-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
 
     <application
         android:name=".ui.app.MyApp"
@@ -20,80 +23,98 @@
             </intent-filter>
         </activity>
 
+        <!--欢迎页activity-->
         <activity
-            android:name=".ui.activity.WelcomeActivity" android:theme="@style/NoBar"/>
+            android:name=".ui.activity.WelcomeActivity"
+            android:theme="@style/NoBar" />
 
-        <activity android:name=".ui.activity.FindSelectionsActivity"
-            android:theme="@style/NoBar"/>
+        <activity
+            android:name=".ui.activity.FindSelectionsActivity"
+            android:theme="@style/NoBar" />
+
         <!--这里是我的大图viewpager的界面-->
-        <activity android:name=".ui.activity.BigMoveViewPageActivity"
-            android:theme="@style/NoBar"/>
-        <!--这里是Findfragment,话题的二级界面-->
-        <activity android:name=".ui.activity.TopicActivity"
-            android:theme="@style/NoBar"/>
-        <!--这里是findfragment,点击下面的lv进入的动态详情二级界面-->
-        <activity android:name=".ui.activity.DynamicSingleActivity"
-            android:theme="@style/NoBar"/>
-        <activity
-            android:name=".ui.activity.FindSelectionsActivity"
-            android:theme="@style/NoBar" />
         <activity
             android:name=".ui.activity.BigMoveViewPageActivity"
-            android:theme="@style/NoBar" />
-        <activity
-            android:name=".ui.activity.DetailsActivity"
-            android:theme="@style/NoBar" />
-        <activity
-            android:name=".ui.activity.AddFriendActivity"
-            android:theme="@style/NoBar" />
-        <activity
-            android:name=".ui.activity.GroupDetailsActivity"
             android:theme="@style/NoBar" />
 
-        <activity
-            android:name=".ui.activity.FindSelectionsActivity"
-            android:theme="@style/NoBar" />
-        <activity
-            android:name=".ui.activity.BigMoveViewPageActivity"
-            android:theme="@style/NoBar" />
+        <!--这里是Findfragment,话题的二级界面-->
         <activity
             android:name=".ui.activity.TopicActivity"
             android:theme="@style/NoBar" />
+
+        <!--这里是findfragment,点击下面的lv进入的动态详情二级界面-->
         <activity
             android:name=".ui.activity.DynamicSingleActivity"
             android:theme="@style/NoBar" />
 
+        <!--没有用的-->
         <activity
             android:name=".ui.activity.DetailsActivity"
             android:theme="@style/NoBar" />
+
+        <!--小组详情activity-->
+        <activity
+            android:name=".ui.activity.GroupDetailsActivity"
+            android:theme="@style/NoBar" />
+
+        <!--添加好友activity-->
         <activity
             android:name=".ui.activity.AddFriendActivity"
             android:theme="@style/NoBar" />
+
         <!--训练进去放视频的activity-->
         <activity
             android:name=".ui.activity.TrainVideoActivity"
             android:theme="@style/NoBar" />
 
-        <activity android:name=".ui.activity.GroupDetailsActivity"
 
-            android:theme="@style/NoBar"/>
         <!--这里是自定义相册的Activity-->
-        <activity android:name=".ui.activity.PhotoAlbumActivity"
-            android:theme="@style/NoBar"/>
+        <activity
+            android:name=".ui.activity.PhotoAlbumActivity"
+            android:theme="@style/NoBar" />
+
         <!--这里是自定义精选相册的Activity-->
-        <activity android:name=".ui.activity.SelectPhotoActivity"
-            android:theme="@style/NoBar"/>
+        <activity
+            android:name=".ui.activity.SelectPhotoActivity"
+            android:theme="@style/NoBar" />
+
         <!--这里是自定义精选相册的详情的Activity-->
-        <activity android:name=".ui.activity.SelectPhotoSingActivity"
-            android:theme="@style/NoBar"/>
-        <activity android:name=".ui.activity.CityActivity"
-            android:theme="@style/NoBar"/>
-        <activity android:name=".ui.activity.EntertainmentActivity"
+        <activity
+            android:name=".ui.activity.SelectPhotoSingActivity"
+            android:theme="@style/NoBar" />
+
+        <!--选择地区activity-->
+        <activity
+            android:name=".ui.activity.CityActivity"
+            android:theme="@style/NoBar" />
+
+        <!--进入娱乐Activity-->
+        <activity
+            android:name=".ui.activity.EntertainmentActivity"
+            android:theme="@style/NoBar" />
+
+        <!--通讯录界面的Activity-->
+        <activity
+            android:name=".ui.activity.AddressBookActivity"
+            android:theme="@style/NoBar" />
+
+        <!--排行榜界面的Activity-->
+        <activity
+            android:name=".ui.activity.TopActivity"
+            android:theme="@style/NoBar" />
+
+        <!--消息界面的Activity-->
+        <activity
+            android:name=".ui.activity.NewsActivity"
+            android:theme="@style/NoBar" />
+
+        <!--新动态界面的Activity-->
+        <activity android:name=".ui.activity.DynamicActivity"
             android:theme="@style/NoBar"/>
 
-
->>>>>>> 903acf4db0558bbcde3ece358bd395d775038948
-
+        <!--点击图片显示照片大图-->
+        <activity android:name=".ui.activity.ShowPhotoActivity"
+            android:theme="@style/NoBar"/>
     </application>
 
 </manifest>

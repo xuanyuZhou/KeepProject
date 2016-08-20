@@ -34,6 +34,7 @@
             android:src="@mipmap/search_glass" />
 
         <EditText
+            android:singleLine="true"
             android:id="@+id/addfriend_Searched"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
