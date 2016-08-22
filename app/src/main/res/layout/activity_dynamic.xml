@@ -32,7 +32,6 @@
         android:layout_below="@+id/relativeLayout"
         android:layout_marginTop="10dp"
         android:background="@null"
-        android:cursorVisible="false"
         android:gravity="start"
         android:hint="分享你的健身心得和经验吧"
         android:textSize="14dp" />
