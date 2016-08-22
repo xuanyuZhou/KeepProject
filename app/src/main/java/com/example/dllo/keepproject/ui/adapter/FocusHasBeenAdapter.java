@@ -111,7 +111,13 @@ public class FocusHasBeenAdapter extends BaseAdapter {
         switch (type) {
             case TYPE_1:
                 holder.allTv.setVisibility(View.GONE);
-                Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).config(Bitmap.Config.RGB_565).resize(200, 200).into(holder.headImage);
+                if (!bean.getData().get(position).getAuthor().getAvatar().isEmpty()){
+                    Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).config(Bitmap.Config.RGB_565).resize(200, 200).into(holder.headImage);
+                }
+                else {
+                    holder.headImage.setImageResource(R.mipmap.keep_logo);
+                }
+
                 holder.userNameTv.setText(bean.getData().get(position).getAuthor().getUsername());
                 holder.addressTv.setText(bean.getData().get(position).getCity());
                 // 第一种行布局中 如果有照片的话就显示出来
@@ -172,7 +178,12 @@ public class FocusHasBeenAdapter extends BaseAdapter {
             case TYPE_2:
 
                 twoHolder.allTwoTv.setVisibility(View.GONE);
-                Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).config(Bitmap.Config.RGB_565).resize(200, 200).into(twoHolder.headTwoImage);
+                if (!bean.getData().get(position).getAuthor().getAvatar().isEmpty()){
+                    Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).config(Bitmap.Config.RGB_565).resize(200, 200).into(twoHolder.headTwoImage);
+                }
+                else {
+                    twoHolder.headTwoImage.setImageResource(R.mipmap.keep_logo);
+                }
                 twoHolder.userNameTwoTv.setText(bean.getData().get(position).getAuthor().getUsername());
                 twoHolder.addressTwoTv.setText(bean.getData().get(position).getCity());
                 twoHolder.metaTwoTv.setText("完成" + bean.getData().get(position).getMeta().getName() +

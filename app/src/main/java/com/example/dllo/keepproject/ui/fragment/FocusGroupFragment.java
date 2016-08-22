@@ -1,5 +1,6 @@
 package com.example.dllo.keepproject.ui.fragment;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.example.dllo.keepproject.ui.activity.GroupDetailsActivity;
 import com.example.dllo.keepproject.ui.adapter.FocusGroupAdapter;
 import com.example.dllo.keepproject.ui.app.MyApp;
 import com.example.dllo.keepproject.view.MyCustomListView;
+import com.example.dllo.keepproject.view.RefreshListView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +30,7 @@ import java.util.Map;
 public class FocusGroupFragment extends AbsBaseFragment implements AdapterView.OnItemClickListener {
     // 没有加入任何小组的线性布局
     private LinearLayout noJoinLayout;
+    // 被scorllview嵌套 所以自定义展开的listview
     private MyCustomListView groupLV;
     private FocusGroupAdapter groupAdapter;
 
@@ -52,7 +55,6 @@ public class FocusGroupFragment extends AbsBaseFragment implements AdapterView.O
 
     @Override
     protected void initDatas() {
-
         initGroupData();
 
 

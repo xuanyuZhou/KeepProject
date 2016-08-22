@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
+    <com.example.dllo.keepproject.view.RefreshListView
         android:scrollbars="none"
         android:id="@+id/focus_hasbeen_lv"
         android:layout_width="match_parent"
