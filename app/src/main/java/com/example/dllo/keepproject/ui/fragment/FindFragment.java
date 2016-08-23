@@ -27,6 +27,7 @@ import com.example.dllo.keepproject.ui.activity.BigMoveViewPageActivity;
 import com.example.dllo.keepproject.ui.activity.CityActivity;
 import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.activity.EntertainmentActivity;
+import com.example.dllo.keepproject.ui.activity.FindSeekActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
 import com.example.dllo.keepproject.ui.activity.PhotoAlbumActivity;
 import com.example.dllo.keepproject.ui.activity.SelectPhotoActivity;
@@ -75,6 +76,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private FindFmSelectionLvAdapter selectionLvAdapter;
     private FindRecommendRvAdapter recommendRvAdapter;
     private FindFmTrendsBean trendsBean;
+    private ImageView findSeekActivityGoTo;
 
     @Override
     protected int setLayout() {
@@ -107,6 +109,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         selectPhotoGoToTv = byView(R.id.selectphoto_gotoTv);
         localGoToLayout = byView(R.id.find_fragment_local_goToIv);
         entertainmentActivityGoTo = byView(R.id.entertainment_activity_goTo);
+        findSeekActivityGoTo = byView(R.id.findfragment_findseekIv);
 
 
 
@@ -121,6 +124,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         selectPhotoGoToTv.setOnClickListener(this);
         localGoToLayout.setOnClickListener(this);
         entertainmentActivityGoTo.setOnClickListener(this);
+        findSeekActivityGoTo.setOnClickListener(this);
 
 
     }
@@ -301,6 +305,11 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
 
             case R.id.entertainment_activity_goTo:
                 goTo(context, EntertainmentActivity.class);
+                break;
+
+            case R.id.findfragment_findseekIv:
+                goTo(context, FindSeekActivity.class);
+                break;
 
 
 

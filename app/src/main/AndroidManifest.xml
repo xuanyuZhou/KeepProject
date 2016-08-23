@@ -90,9 +90,11 @@
             android:theme="@style/NoBar"/>
         <activity android:name=".ui.activity.EntertainmentActivity"
             android:theme="@style/NoBar"/>
+        <!--这里是热门搜索关键字的页面-->
+        <activity android:name=".ui.activity.FindSeekActivity"
+            android:theme="@style/NoBar"/>
 
 
->>>>>>> 903acf4db0558bbcde3ece358bd395d775038948
 
     </application>
 
