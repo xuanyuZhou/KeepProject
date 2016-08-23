@@ -26,6 +26,7 @@ import com.example.dllo.keepproject.model.net.OnHttpCallback;
 import com.example.dllo.keepproject.ui.activity.BigMoveViewPageActivity;
 import com.example.dllo.keepproject.ui.activity.CityActivity;
 import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
+import com.example.dllo.keepproject.ui.activity.EntertainmentActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
 import com.example.dllo.keepproject.ui.activity.PhotoAlbumActivity;
 import com.example.dllo.keepproject.ui.activity.SelectPhotoActivity;
@@ -57,6 +58,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private TextView sourceTv;
     private ImageView avatarIv;
     private ImageView photoIv;
+    private LinearLayout entertainmentActivityGoTo;
     private ImageView goToIv;
     private TextView gvContentTv;
     private TextView gvLikesTv;
@@ -104,6 +106,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         findFragmentKeepSixIv = byView(R.id.find_fragment_keepSix);
         selectPhotoGoToTv = byView(R.id.selectphoto_gotoTv);
         localGoToLayout = byView(R.id.find_fragment_local_goToIv);
+        entertainmentActivityGoTo = byView(R.id.entertainment_activity_goTo);
 
 
 
@@ -117,6 +120,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         myCustomGridView.setOnItemClickListener(this);
         selectPhotoGoToTv.setOnClickListener(this);
         localGoToLayout.setOnClickListener(this);
+        entertainmentActivityGoTo.setOnClickListener(this);
 
 
     }
@@ -214,7 +218,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
 
     private void initFindRvData() {
         Map<String, String> rvHeadMap = new HashMap<>();
-        rvHeadMap.put("x-device-id", "000000000000000080027dfd41d11111b0c27dbf");
+        rvHeadMap.put("x-device-id", "000000000000000080027ab241a11111b0927a74");
         rvHeadMap.put("X-KEEP-FROM", "android");
         rvHeadMap.put("X-KEEP-TIMEZONE", "America/New_York");
         rvHeadMap.put("X-KEEP-CHANNEL", "baidu");
@@ -243,7 +247,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
 
     private void initFindGvData() {
         Map<String, String> gvHeadMap = new HashMap<>();
-        gvHeadMap.put("x-device-id", "000000000000000080027dfd41d11111b0c27dbf");
+        gvHeadMap.put("x-device-id", "000000000000000080027ab241a11111b0927a74");
         gvHeadMap.put("X-KEEP-FROM", "android");
         gvHeadMap.put("X-KEEP-TIMEZONE", "America/New_York");
         gvHeadMap.put("X-KEEP-CHANNEL", "baidu");
@@ -295,6 +299,10 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
                 goTo(context, CityActivity.class);
                 break;
 
+            case R.id.entertainment_activity_goTo:
+                goTo(context, EntertainmentActivity.class);
+
+
 
 
         }
@@ -303,8 +311,8 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Bundle bundle = new Bundle();
-//      trendsBean = (FindFmTrendsBean) parent.getItemAtPosition(position);
-        bundle.putString("url", "http://api.gotokeep.com/v1.1/entries/" + trendsBean.getData().get(position).get_id() + "?limit=20&reverse=true");
+        FindFmTrendsBean.DataBean bean= (FindFmTrendsBean.DataBean) parent.getItemAtPosition(position);
+        bundle.putString("url", "http://api.gotokeep.com/v1.1/entries/" + bean.get_id() + "?limit=20&reverse=true");
         goTo(context, DynamicSingleActivity.class, bundle);
     }
 }

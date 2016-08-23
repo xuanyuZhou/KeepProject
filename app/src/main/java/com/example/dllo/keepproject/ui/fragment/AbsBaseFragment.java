@@ -68,6 +68,7 @@ public abstract class AbsBaseFragment extends Fragment {
     protected void goTo(Context from, Class<? extends AbsBaseActivity> a) {
         Intent intent = new Intent(from, a);
         context.startActivity(intent);
+
     }
     // 带传值
     protected  void goTo(Context from, Class<? extends AbsBaseActivity> to, Bundle values){

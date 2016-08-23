@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by dllo on 16/8/11.
+ * 欢迎页面
  */
 public class WelcomeActivity extends AbsBaseActivity implements View.OnClickListener {
     private CustomVideoView welcomeVideoView;

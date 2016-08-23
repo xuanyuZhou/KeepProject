@@ -51,7 +51,7 @@ public class TopicActivity extends AbsBaseActivity implements View.OnClickListen
     @Override
     protected void initDatas() {
         Map<String,String> headMap = new HashMap<>();
-        headMap.put("x-device-id","000000000000000080027dfd41d11111b0c27dbf");
+        headMap.put("x-device-id","000000000000000080027ab241a11111b0927a74");
         headMap.put("X-KEEP-FROM","android");
         headMap.put("X-KEEP-TIMEZONE","America/New_York");
         headMap.put("X-KEEP-CHANNEL","baidu");

@@ -1,8 +1,9 @@
 package com.example.dllo.keepproject.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,23 +12,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dllo.keepproject.R;
-import com.example.dllo.keepproject.model.bean.GroupNewsBean;
+import com.example.dllo.keepproject.model.bean.GroupHotBean;
+
+import com.example.dllo.keepproject.ui.activity.ShowPhotoActivity;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Created by dllo on 16/8/16.
+ * Created by dllo on 16/8/19.
+ * 小组详情页面 - 热门的适配器
  */
-public class GroupDetailsNewsAndHotAdapter extends BaseAdapter {
-    private GroupNewsBean bean;
+public class GroupDetailsHotAdapter extends BaseAdapter {
+    private GroupHotBean bean;
     private Context context;
 
-    public GroupDetailsNewsAndHotAdapter(Context context) {
+    public GroupDetailsHotAdapter(Context context) {
         this.context = context;
     }
 
-    public void setBean(GroupNewsBean bean) {
+    public void setBean(GroupHotBean bean) {
         this.bean = bean;
         notifyDataSetChanged();
     }
@@ -48,7 +52,7 @@ public class GroupDetailsNewsAndHotAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         NewsViewHolder holder = null;
         if (convertView == null){
             convertView = LayoutInflater.from(context).inflate(R.layout.item_news_group,parent,false);
@@ -71,9 +75,9 @@ public class GroupDetailsNewsAndHotAdapter extends BaseAdapter {
             holder.userHead.setImageResource(R.mipmap.take_icon);
         }
         // 用户名
-       if (!bean.getData().get(position).getAuthor().getUsername().isEmpty()){
-           holder.userTv.setText(bean.getData().get(position).getAuthor().getUsername());
-       }
+        if (!bean.getData().get(position).getAuthor().getUsername().isEmpty()){
+            holder.userTv.setText(bean.getData().get(position).getAuthor().getUsername());
+        }
         // 内容
         if (!bean.getData().get(position).getContent().isEmpty()){
             holder.contentTv.setVisibility(View.VISIBLE);
@@ -84,6 +88,21 @@ public class GroupDetailsNewsAndHotAdapter extends BaseAdapter {
             holder.contentImage.setVisibility(View.VISIBLE);
             Picasso.with(context).load(bean.getData().get(position).getPhoto()).config(Bitmap.Config.RGB_565).resize(300,300).into(holder.contentImage);
         }
+        else {
+            holder.contentImage.setVisibility(View.GONE);
+        }
+        // 点击图片显示大图
+        holder.contentImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ShowPhotoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("image",bean.getData().get(position).getPhoto());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
         // 喜欢个数
         if (!String.valueOf(bean.getData().get(position).getLikes()).isEmpty()){
             holder.likeCountTv.setText(String.valueOf(bean.getData().get(position).getLikes()));

@@ -18,7 +18,7 @@
     <style name="NoBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorHui</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorQianHui</item>
     </style>
     <!--欢迎页没有标题栏-->
     <style name="welcomeNoBar" parent="Theme.AppCompat.Light.NoActionBar"/>

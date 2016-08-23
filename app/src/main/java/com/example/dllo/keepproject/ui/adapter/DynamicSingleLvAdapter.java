@@ -1,8 +1,11 @@
 package com.example.dllo.keepproject.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,8 @@ import com.example.dllo.keepproject.R;
 import com.example.dllo.keepproject.model.bean.DynamicSingleBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -44,9 +49,9 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
     public int getItemViewType(int position) {
         if (position == 0) {
             return TYPE_ONE;
-        }else if (position == 1) {
+        } else if (position == 1) {
             return TYPE_TWO;
-        }else if (position == 2) {
+        } else if (position == 2) {
             return TYPE_THREE;
         } else {
             return TYPE_FOUR;
@@ -57,7 +62,6 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
     public int getViewTypeCount() {
         return TYPE_COUNT;
     }
-
 
 
     @Override
@@ -90,7 +94,26 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
                     lvHolderOne = (DynamicSingleLvHolderOne) convertView.getTag();
                 }
                 lvHolderOne.usernameTv.setText(datas.getData().getAuthor().getUsername());
-                lvHolderOne.contentTv.setText(datas.getData().getContent());
+                // 设置绿色字
+                String sb = datas.getData().getContent();
+                SpannableString span = new SpannableString(sb);
+
+                ArrayList<String> array = new ArrayList<>();
+                ArrayList<Integer> arr = new ArrayList<>();
+                for (int i = 0; i < sb.length(); i++) {
+                    String j = String.valueOf(sb.charAt(i));
+                    array.add(j);
+                    if (array.get(i).equals("#")) {
+                        arr.add(i);
+                    }
+                }
+                for (int i = 0; i < arr.size(); i++) {
+                    span.setSpan(new ForegroundColorSpan(Color.argb(255, 78, 164, 105)), arr.get(i), arr.get(i + 1) + 1, 0);
+                    i++;
+                }
+                lvHolderOne.contentTv.setText(span);
+
+
                 lvHolderOne.createdTv.setText(String.valueOf(datas.getData().getAuthor().getCreated()));
                 Picasso.with(context).load(datas.getData().getPhoto()).into(lvHolderOne.photoIv);
                 Picasso.with(context).load(datas.getData().getAuthor().getAvatar()).into(lvHolderOne.avatarIv);
@@ -98,11 +121,11 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
                 break;
             case TYPE_TWO:
                 DynamicSingleLvHolderTwo lvHolderTwo = null;
-                if (convertView == null){
-                    convertView = LayoutInflater.from(context).inflate(R.layout.item_activity_dynamicsingle_two_lv,parent,false);
+                if (convertView == null) {
+                    convertView = LayoutInflater.from(context).inflate(R.layout.item_activity_dynamicsingle_two_lv, parent, false);
                     lvHolderTwo = new DynamicSingleLvHolderTwo(convertView);
                     convertView.setTag(lvHolderTwo);
-                }else {
+                } else {
                     lvHolderTwo = (DynamicSingleLvHolderTwo) convertView.getTag();
                 }
                 lvHolderTwo.likesTwoIv.setText(String.valueOf(datas.getData().getLikes()));
@@ -110,19 +133,18 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
                 DynamicSingleRvAdapter rvAdapter = new DynamicSingleRvAdapter(context);
                 rvAdapter.setDatas(datas);
                 recyclerView.setAdapter(rvAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
-
+                recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
 
 
                 break;
 
             case TYPE_THREE:
                 DynamicSingleLvHolderThree lvHolderThree = null;
-                if (convertView == null){
-                    convertView = LayoutInflater.from(context).inflate(R.layout.item_activity_dymicsingle_three_lv,parent,false);
+                if (convertView == null) {
+                    convertView = LayoutInflater.from(context).inflate(R.layout.item_activity_dymicsingle_three_lv, parent, false);
                     lvHolderThree = new DynamicSingleLvHolderThree(convertView);
                     convertView.setTag(lvHolderThree);
-                }else {
+                } else {
                     lvHolderThree = (DynamicSingleLvHolderThree) convertView.getTag();
                 }
                 lvHolderThree.commentsThreeIv.setText(String.valueOf(datas.getData().getComments()));
@@ -130,23 +152,22 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
 
             case TYPE_FOUR:
                 DynamicSingleLvHolderFour lvHolderFour = null;
-                if (convertView ==null){
-                    convertView = LayoutInflater.from(context).inflate(R.layout.item_activity_dymicsingle_four_lv,parent,false);
+                if (convertView == null) {
+                    convertView = LayoutInflater.from(context).inflate(R.layout.item_activity_dymicsingle_four_lv, parent, false);
                     lvHolderFour = new DynamicSingleLvHolderFour(convertView);
                     convertView.setTag(lvHolderFour);
-                }else {
+                } else {
                     lvHolderFour = (DynamicSingleLvHolderFour) convertView.getTag();
                 }
                 lvHolderFour.usernameFourTv.setText(datas.getData().getCommentsList().get(position).getAuthor().getUsername());
                 lvHolderFour.contentFourTv.setText(datas.getData().getCommentsList().get(position).getContent());
                 lvHolderFour.modifiedFourTv.setText(String.valueOf(datas.getData().getCommentsList().get(position).getModified()));
-                if (!datas.getData().getCommentsList().get(position).getAuthor().getAvatar().isEmpty()){
+                if (!datas.getData().getCommentsList().get(position).getAuthor().getAvatar().isEmpty()) {
                     lvHolderFour.avatarFourIv.setVisibility(View.VISIBLE);
                     Picasso.with(context).load(datas.getData().getCommentsList().get(position).getAuthor().getAvatar()).into(lvHolderFour.avatarFourIv);
-                }else {
+                } else {
                     lvHolderFour.avatarFourIv.setVisibility(View.INVISIBLE);
                 }
-
 
 
         }
@@ -174,7 +195,6 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
         TextView likesTwoIv;
 
 
-
         public DynamicSingleLvHolderTwo(View view) {
             likesTwoIv = (TextView) view.findViewById(R.id.dynamicsSingle_two_likes);
             recyclerView = (RecyclerView) view.findViewById(R.id.dynamicsSingle_two_rv);
@@ -183,7 +203,7 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
         }
     }
 
-    class DynamicSingleLvHolderThree{
+    class DynamicSingleLvHolderThree {
         TextView commentsThreeIv;
 
         public DynamicSingleLvHolderThree(View view) {
@@ -191,7 +211,7 @@ public class DynamicSingleLvAdapter extends BaseAdapter {
         }
     }
 
-    class DynamicSingleLvHolderFour{
+    class DynamicSingleLvHolderFour {
         TextView contentFourTv;
         TextView usernameFourTv;
         TextView modifiedFourTv;

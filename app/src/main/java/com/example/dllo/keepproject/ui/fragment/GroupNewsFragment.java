@@ -2,17 +2,15 @@ package com.example.dllo.keepproject.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.dllo.keepproject.R;
 import com.example.dllo.keepproject.model.bean.GroupNewsBean;
 import com.example.dllo.keepproject.model.net.DlaHttp;
 import com.example.dllo.keepproject.model.net.OnHttpCallback;
-import com.example.dllo.keepproject.ui.adapter.GroupDetailsNewsAndHotAdapter;
+import com.example.dllo.keepproject.ui.adapter.GroupDetailsNewsAdapter;
 import com.example.dllo.keepproject.ui.app.MyApp;
 import com.example.dllo.keepproject.view.NestedListView;
 
@@ -25,7 +23,7 @@ import java.util.Map;
  */
 public class GroupNewsFragment extends AbsBaseFragment {
     private NestedListView newsLv;
-    private GroupDetailsNewsAndHotAdapter adapter;
+    private GroupDetailsNewsAdapter adapter;
     private NestedScrollView nestedSV;
     private Button newsBtn;
 
@@ -92,7 +90,7 @@ public class GroupNewsFragment extends AbsBaseFragment {
 
     private void initNewsData(String url) {
         Map<String, String> headMap = new HashMap<>();
-        headMap.put("x-device-id", "000000000000000080027f482c2111119b127f0a");
+        headMap.put("x-device-id", "000000000000000080027ab241a11111b0927a74");
         headMap.put("X-KEEP-FROM", "android");
         headMap.put("X-KEEP-TIMEZONE", "America/New_York");
         headMap.put("X-KEEP-CHANNEL", " bdss02");
@@ -108,7 +106,7 @@ public class GroupNewsFragment extends AbsBaseFragment {
 
             @Override
             public void onSuccess(GroupNewsBean response) {
-                adapter = new GroupDetailsNewsAndHotAdapter(MyApp.getContext());
+                adapter = new GroupDetailsNewsAdapter(MyApp.getContext());
                 adapter.setBean(response);
                 newsLv.setAdapter(adapter);
 
