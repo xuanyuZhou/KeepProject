@@ -27,6 +27,7 @@
                     android:textSize="17sp" />
 
                 <ImageView
+                    android:id="@+id/findfragment_findseekIv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="320dp"
