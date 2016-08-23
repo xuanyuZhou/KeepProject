@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.dllo.keepproject.R;
 import com.example.dllo.keepproject.model.bean.TrainFmVideoBean;
@@ -33,8 +34,9 @@ public class TrainVideoActivity extends AbsBaseActivity implements View.OnClickL
     private DlaHttp tool = DlaHttp.getInstance(); // 网络获取工具类
     private String url; // 传过来的网址url
     private int type; // 传过来的状态
-    private ImageView closeIv;// 左上角叉
+    private ImageView backOnIv;// 左上角叉
     private Chronometer chronometer; // 计时器
+    private ImageView lockIv,lockScreenIv,closedIv;// 锁屏相关
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         @Override
@@ -52,13 +54,18 @@ public class TrainVideoActivity extends AbsBaseActivity implements View.OnClickL
     @Override
     protected void initView() {
         trainVideoView = byView(R.id.aty_train_videoView);
-        closeIv = byView(R.id.aty_train_closeIv);
+        backOnIv = byView(R.id.aty_train_closeIv);
         chronometer = byView(R.id.aty_train_timer_Chronometer);
+        lockIv = byView(R.id.aty_train_lockIv);
+        lockScreenIv = byView(R.id.aty_train_lockScreenIv);
+        closedIv = byView(R.id.aty_train_closedIv);
     }
 
     @Override
     protected void initListeners() {
-        closeIv.setOnClickListener(this);
+        backOnIv.setOnClickListener(this);
+        lockIv.setOnClickListener(this);
+        closedIv.setOnClickListener(this);
     }
 
     @Override
@@ -184,8 +191,25 @@ public class TrainVideoActivity extends AbsBaseActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            // 左上角叉
             case R.id.aty_train_closeIv:
                 showDialog();
+                break;
+            // 锁屏锁头
+            case R.id.aty_train_lockIv:
+                lockScreenIv.setVisibility(View.VISIBLE);
+                lockIv.setVisibility(View.GONE);
+                closedIv.setVisibility(View.VISIBLE);
+                break;
+            // 锁屏覆盖图
+            case R.id.aty_train_lockScreenIv:
+                Toast.makeText(this, "hehe", Toast.LENGTH_SHORT).show();
+                break;
+            // 解除锁屏
+            case R.id.aty_train_closedIv:
+                lockScreenIv.setVisibility(View.GONE);
+                lockIv.setVisibility(View.VISIBLE);
+                closedIv.setVisibility(View.GONE);
                 break;
         }
     }
