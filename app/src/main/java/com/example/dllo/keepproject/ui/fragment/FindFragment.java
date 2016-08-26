@@ -29,6 +29,7 @@ import com.example.dllo.keepproject.ui.activity.DynamicSingleActivity;
 import com.example.dllo.keepproject.ui.activity.EntertainmentActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
 import com.example.dllo.keepproject.ui.activity.PhotoAlbumActivity;
+import com.example.dllo.keepproject.ui.activity.SearchActivity;
 import com.example.dllo.keepproject.ui.activity.SelectPhotoActivity;
 import com.example.dllo.keepproject.ui.activity.TopicActivity;
 import com.example.dllo.keepproject.ui.adapter.FindFmSelectionLvAdapter;
@@ -51,6 +52,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private ImageView findFragmentKeepFourIv;
     private ImageView findFragmentKeepFiveIv;
     private ImageView findFragmentKeepSixIv;
+    private ImageView findSearchIv;
     private LinearLayout topicLayout;
     private TextView selectPhotoGoToTv;
     private TextView nameTv;
@@ -107,6 +109,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         selectPhotoGoToTv = byView(R.id.selectphoto_gotoTv);
         localGoToLayout = byView(R.id.find_fragment_local_goToIv);
         entertainmentActivityGoTo = byView(R.id.entertainment_activity_goTo);
+        findSearchIv = byView(R.id.find_search);
 
 
 
@@ -121,6 +124,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         selectPhotoGoToTv.setOnClickListener(this);
         localGoToLayout.setOnClickListener(this);
         entertainmentActivityGoTo.setOnClickListener(this);
+        findSearchIv.setOnClickListener(this);
 
 
     }
@@ -301,6 +305,11 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
 
             case R.id.entertainment_activity_goTo:
                 goTo(context, EntertainmentActivity.class);
+
+            case R.id.find_search:
+                goTo(context, SearchActivity.class);
+                getActivity().overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+                break;
 
 
 

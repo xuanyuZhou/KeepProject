@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:background="@color/colorHui"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/search_Et"
+            android:textSize="10dp"
+            android:hint="搜索课程、用户名和内容"
+            android:paddingLeft="10dp"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@mipmap/search_glass"
+            android:textColorHint="#999999"
+            android:textColor="#999999"
+            android:background="@drawable/shape_search"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/search_cancel"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+            android:text="取消"
+            android:textSize="13dp"
+            android:textColor="#55C483"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    
+    <ListView
+        android:id="@+id/search_Lv"
+        android:background="@color/colorBai"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

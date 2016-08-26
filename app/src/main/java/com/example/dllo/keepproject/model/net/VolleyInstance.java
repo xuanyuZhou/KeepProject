@@ -3,15 +3,19 @@ package com.example.dllo.keepproject.model.net;
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.dllo.keepproject.R;
+import com.example.dllo.keepproject.ui.fragment.GroupNewsFragment;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
+import java.util.Map;
 
 /**
  * Created by dllo on 16/7/12.
@@ -90,6 +94,33 @@ public class VolleyInstance {
         ImageLoader.getInstance().init(configuration);
         ImageLoader.getInstance().displayImage(url, imageView, options);
     }
+
+    /**
+     * @param url        数据网址
+     * @param volleyPort 请求结果(是个接口)
+     */
+    public void startStringRequest(String url, final VolleyPort volleyPort, final Map<String,String> headMaps) {
+        StringRequest sr = new StringRequest(url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // 成功方法
+                volleyPort.stringSuccess(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // 失败方法
+                volleyPort.stringFailure();
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                return headMaps;
+            }
+        };
+        queue.add(sr);
+    }
+
 
 
 }
