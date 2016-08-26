@@ -6,6 +6,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,10 +20,13 @@ import java.util.Random;
  * Created by dllo on 16/8/19.
  * 这里是第二页的搜索页面(放大镜)
  */
-public class FindSeekActivity extends AbsBaseActivity{
+public class FindSeekActivity extends AbsBaseActivity implements View.OnClickListener {
     //这里是我自己导入的一个StellarMap的jar
     private StellarMap stellarMap;
     private ArrayList<String> list = new ArrayList<String>();
+    private ImageView backImage;
+    private ImageView searchImage;
+
     @Override
     protected int setLayout() {
         return R.layout.activity_findseek;
@@ -30,11 +34,15 @@ public class FindSeekActivity extends AbsBaseActivity{
 
     @Override
     protected void initView() {
+        backImage = byView(R.id.findseek_activity_backIv);
+        searchImage = byView(R.id.search_Image);
 
     }
 
     @Override
     protected void initListeners() {
+        backImage.setOnClickListener(this);
+        searchImage.setOnClickListener(this);
 
     }
 
@@ -43,25 +51,25 @@ public class FindSeekActivity extends AbsBaseActivity{
         // 这里设置要来源的文字
 //                list.add("第" + i + "组" + "文字" + j);
 
-        String[] str = new String[]{"阿诺德推举","健身","美胸","美肤","美臀","胸肌",
-                "腹肌","马甲线","人鱼线","美腿","肱二头肌","瘦腿","减脂",
-                "减肥","丰胸","瑜伽","跑步","有氧运动","腿部运动","臀部肌肉",
-                "臀大肌","腹部","塑身","线条","肱三头肌","史密斯肩上推举","坐姿侧平举","美肤",
-                "阿诺德推举","健身","美胸","美肤","美臀","胸肌",
-                "腹肌","马甲线","人鱼线","美腿","肱二头肌","瘦腿","减脂",
-                "减肥","丰胸","瑜伽","跑步","有氧运动","腿部运动","臀部肌肉",
-                "臀大肌","腹部","塑身","线条","肱三头肌","史密斯肩上推举","坐姿侧平举","美肤"};
+        String[] str = new String[]{"阿诺德推举", "健身", "美胸", "美肤", "美臀", "胸肌",
+                "腹肌", "马甲线", "人鱼线", "美腿", "肱二头肌", "瘦腿", "减脂",
+                "减肥", "丰胸", "瑜伽", "跑步", "有氧运动", "腿部运动", "臀部肌肉",
+                "臀大肌", "腹部", "塑身", "线条", "肱三头肌", "史密斯肩上推举", "坐姿侧平举", "美肤",
+                "阿诺德推举", "健身", "美胸", "美肤", "美臀", "胸肌",
+                "腹肌", "马甲线", "人鱼线", "美腿", "肱二头肌", "瘦腿", "减脂",
+                "减肥", "丰胸", "瑜伽", "跑步", "有氧运动", "腿部运动", "臀部肌肉",
+                "臀大肌", "腹部", "塑身", "线条", "肱三头肌", "史密斯肩上推举", "坐姿侧平举", "美肤"};
         for (int j = 0; j < str.length; j++) {
             for (int i = 0; i < str.length; i++) {
                 list.add(str[i]);
-          }
+            }
         }
 
 
         stellarMap = new StellarMap(this);
         // 1设置内部的TextView距离四周的内边距
         int padding = 15;
-        stellarMap.setInnerPadding(padding,padding,padding,padding);
+        stellarMap.setInnerPadding(padding, padding, padding, padding);
         stellarMap.setAdapter(new StellarMapAdapter());
         // 设置默认显示第几组的数据
         stellarMap.setGroup(0, true);// 这里默认显示第0组
@@ -71,6 +79,20 @@ public class FindSeekActivity extends AbsBaseActivity{
         // 把fragment显示至界面,new出fragment对象
         FrameLayout fl = (FrameLayout) findViewById(R.id.fl);
         fl.addView(stellarMap);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.findseek_activity_backIv:
+                finish();
+                overridePendingTransition(R.anim.finish_out, R.anim.finish_in);
+                break;
+            case R.id.search_Image:
+                goTo(this, SearchActivity.class);
+                overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+                break;
+        }
     }
 
     class StellarMapAdapter implements StellarMap.Adapter {
@@ -143,5 +165,5 @@ public class FindSeekActivity extends AbsBaseActivity{
     }
 
 
-    }
+}
 

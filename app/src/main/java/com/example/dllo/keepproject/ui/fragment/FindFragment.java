@@ -30,6 +30,7 @@ import com.example.dllo.keepproject.ui.activity.EntertainmentActivity;
 import com.example.dllo.keepproject.ui.activity.FindSeekActivity;
 import com.example.dllo.keepproject.ui.activity.FindSelectionsActivity;
 import com.example.dllo.keepproject.ui.activity.PhotoAlbumActivity;
+import com.example.dllo.keepproject.ui.activity.SearchActivity;
 import com.example.dllo.keepproject.ui.activity.SelectPhotoActivity;
 import com.example.dllo.keepproject.ui.activity.TopicActivity;
 import com.example.dllo.keepproject.ui.adapter.FindFmSelectionLvAdapter;
@@ -52,6 +53,7 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
     private ImageView findFragmentKeepFourIv;
     private ImageView findFragmentKeepFiveIv;
     private ImageView findFragmentKeepSixIv;
+    private ImageView findSearchIv;
     private LinearLayout topicLayout;
     private TextView selectPhotoGoToTv;
     private TextView nameTv;
@@ -111,6 +113,9 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         entertainmentActivityGoTo = byView(R.id.entertainment_activity_goTo);
         findSeekActivityGoTo = byView(R.id.findfragment_findseekIv);
 
+        //findSearchIv = byView(R.id.find_search);
+
+
 
 
     }
@@ -124,7 +129,11 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
         selectPhotoGoToTv.setOnClickListener(this);
         localGoToLayout.setOnClickListener(this);
         entertainmentActivityGoTo.setOnClickListener(this);
+
         findSeekActivityGoTo.setOnClickListener(this);
+
+        //findSearchIv.setOnClickListener(this);
+
 
 
     }
@@ -309,7 +318,9 @@ public class FindFragment extends AbsBaseFragment implements View.OnClickListene
 
             case R.id.findfragment_findseekIv:
                 goTo(context, FindSeekActivity.class);
+                getActivity().overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
                 break;
+
 
 
 

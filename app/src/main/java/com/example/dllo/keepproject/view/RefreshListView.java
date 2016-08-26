@@ -1,11 +1,16 @@
 package com.example.dllo.keepproject.view;
 
+import java.util.Date;
+
+
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.AbsListView;
@@ -14,10 +19,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.AbsListView.OnScrollListener;
 
 import com.example.dllo.keepproject.R;
 
-import java.util.Date;
 
 /**
  * Created by dllo on 16/8/22.
@@ -66,6 +71,7 @@ public class RefreshListView extends ListView implements AbsListView.OnScrollLis
 
     /**
      * 自定义listview 的构造方法
+     *
      * @param context
      * @param attrs
      */
@@ -74,11 +80,10 @@ public class RefreshListView extends ListView implements AbsListView.OnScrollLis
         init(context);
     }
 
-
     private void init(Context context) {
         // 绑定布局 将布局注入
         mHeadView = (LinearLayout) LayoutInflater.from(context).
-                inflate(R.layout.listview_refresh_head,null);
+                inflate(R.layout.listview_refresh_head, null);
         // 下拉的小箭头
         mArrowImageView = (ImageView) mHeadView.findViewById(R.id.head_arrowImageView);
         // 进度条
@@ -126,7 +131,6 @@ public class RefreshListView extends ListView implements AbsListView.OnScrollLis
         mISRefreshable = false;
     }
 
-
     /**
      * 由于安卓的运行机制决定了无法再组件类外部使用getWidth和getHeight方法
      * 必须使用View.getMeasuredWidth和View.getMeasureHeight方法获得当前组件的宽度和高度
@@ -163,13 +167,13 @@ public class RefreshListView extends ListView implements AbsListView.OnScrollLis
 
     }
 
-
     /**
      * 滚动一直回调,直到停止滚动时才停止回调,单击时回调一次
+     *
      * @param view
      * @param firstVisibleItem 当前能看见的第一个列表项(从0开始)
      * @param visibleItemCount 当前能看见的列表项个数(小半个也算)
-     * @param totalItemCount 列表项总数
+     * @param totalItemCount   列表项总数
      */
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem,
@@ -355,5 +359,4 @@ public class RefreshListView extends ListView implements AbsListView.OnScrollLis
                 break;
         }
     }
-
 }

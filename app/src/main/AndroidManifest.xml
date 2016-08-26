@@ -129,13 +129,30 @@
 
 
         <!--新动态界面的Activity-->
-        <activity android:name=".ui.activity.DynamicActivity"
-            android:theme="@style/NoBar"/>
+        <activity
+            android:name=".ui.activity.DynamicActivity"
+            android:theme="@style/NoBar" />
 
 
         <!--点击图片显示照片大图-->
-        <activity android:name=".ui.activity.ShowPhotoActivity"
-            android:theme="@style/NoBar"/>
+        <activity
+            android:name=".ui.activity.ShowPhotoActivity"
+            android:theme="@style/NoBar" />
+
+        <!--设置界面-->
+        <activity
+            android:name=".ui.activity.SetUpActivity"
+            android:theme="@style/NoBar" />
+
+        <!--搜索界面-->
+        <activity
+            android:name=".ui.activity.SearchActivity"
+            android:theme="@style/NoBar" />
+
+        <!--个人资料-->
+        <activity
+            android:name=".ui.activity.PersonnalActivity"
+            android:theme="@style/NoBar" />
     </application>
 
 </manifest>
