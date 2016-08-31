@@ -59,6 +59,7 @@
         android:text="若你足够优秀,自会有人珍惜"
         android:textColor="@android:color/black" />
     <TextView
+        android:visibility="gone"
         android:layout_marginTop="5dp"
         android:textSize="10sp"
         android:id="@+id/focus_hasbeen_item_contentTv_all"

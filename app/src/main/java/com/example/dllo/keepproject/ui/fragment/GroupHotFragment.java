@@ -91,6 +91,7 @@ public class GroupHotFragment extends AbsBaseFragment {
         headMap.put("Authorization", " Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1N2FkMWM4MjFiY2M1YjJlMTg2NTA4YzAiLCJ1c2VybmFtZSI6IumYv-emu-emu-WViiIsImF2YXRhciI6IiIsImlzcyI6Imh0dHA6Ly93d3cuZ290b2tlZXAuY29tLyIsImV4cCI6MTQ3MzkwMDcwMSwiaWF0IjoxNDcxMzA4NzAxfQ.UYdr4yZcvN8Y4nwlWNo8toC8nLzK-XUGimgQGF5ZgFY");
         headMap.put("Host", "api.gotokeep.com");
         headMap.put("Connection", "Keep-Alive");
+
         DlaHttp tools = DlaHttp.getInstance();
         tools.startRequest(url, GroupHotBean.class, headMap, new OnHttpCallback<GroupHotBean>() {
             @Override
