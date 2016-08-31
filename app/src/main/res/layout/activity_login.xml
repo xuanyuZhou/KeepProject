@@ -6,29 +6,27 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:background="@color/loginBgColor"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@color/loginBgColor">
 
         <ImageView
-            android:id="@+id/aty_register_backIv"
-           style="@style/back" />
+            android:id="@+id/aty_login_backIv"
+            style="@style/back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="注册"
+            android:text="登录"
             android:textColor="@color/colorBai"
             android:textSize="15sp" />
     </RelativeLayout>
 
 
-
     <EditText
-        android:maxLength="10"
-        android:id="@+id/aty_register_userNameEd"
+        android:id="@+id/aty_login_userNameEd"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="20dp"
@@ -36,16 +34,14 @@
         android:drawableLeft="@mipmap/phone"
         android:drawablePadding="10dp"
         android:hint="账号 | "
+        android:maxLength="10"
         android:paddingLeft="10dp"
         android:textColor="@color/colorQianHui"
         android:textColorHint="@color/colorQianHui"
         android:textSize="12sp" />
 
     <EditText
-        android:maxLength="10"
-        android:inputType="textPassword"
-        android:password="true"
-        android:id="@+id/aty_register_passWordEd"
+        android:id="@+id/aty_login_passWordEd"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
@@ -54,22 +50,25 @@
         android:drawableLeft="@mipmap/password"
         android:drawablePadding="10dp"
         android:hint="密码 | "
+        android:inputType="textPassword"
+        android:maxLength="10"
         android:paddingLeft="10dp"
+        android:password="true"
         android:textColor="@color/colorQianHui"
         android:textColorHint="@color/colorQianHui"
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/aty_register_registerBtn"
+        android:id="@+id/aty_login_loginBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/shape_register_login_btn"
         android:gravity="center"
-        android:text="注册"
+        android:text="登录"
         android:textColor="@color/colorQianHui"
         android:textSize="15sp" />
 
@@ -112,11 +111,11 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/aty_register_qq_login"
+            android:layout_toLeftOf="@+id/aty_login_qq_login"
             android:src="@mipmap/wechat" />
 
         <ImageView
-            android:id="@+id/aty_register_qq_login"
+            android:id="@+id/aty_login_qq_login"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerHorizontal="true"
@@ -129,7 +128,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/aty_register_qq_login"
+            android:layout_toRightOf="@id/aty_login_qq_login"
             android:src="@mipmap/weico" />
     </RelativeLayout>
 

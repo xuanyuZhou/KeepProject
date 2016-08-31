@@ -54,6 +54,7 @@ public class WelcomeActivity extends AbsBaseActivity implements View.OnClickList
     protected void initListeners() {
 
         loginBtn.setOnClickListener(this);
+        registerBtn.setOnClickListener(this);
     }
 
     @Override
@@ -66,6 +67,24 @@ public class WelcomeActivity extends AbsBaseActivity implements View.OnClickList
 
     }
 
+
+    /**
+     * 离开的时候让videoView暂停
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        welcomeVideoView.pause();
+    }
+
+    /**
+     * 重新运行的时候让videoView开始播放
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        welcomeVideoView.start();
+    }
 
     private void showVideo() {
         // 添加video的资源
@@ -136,9 +155,21 @@ public class WelcomeActivity extends AbsBaseActivity implements View.OnClickList
 
     }
 
+    /**
+     *监听事件*******
+     */
     @Override
     public void onClick(View v) {
-        goTo(this,MainActivity.class);
+        switch (v.getId()) {
+            case R.id.welcome_login:
+                goTo(this,LoginActivity.class);
+                overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+                break;
+            case R.id.welcome_register:
+                goTo(this,RegisterActivity.class);
+                overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+                break;
+        }
     }
 
     /**
