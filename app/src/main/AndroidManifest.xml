@@ -97,23 +97,61 @@
             android:name=".ui.activity.AddressBookActivity"
             android:theme="@style/NoBar" />
 
+
         <!--排行榜界面的Activity-->
         <activity
             android:name=".ui.activity.TopActivity"
             android:theme="@style/NoBar" />
+
+        <!--这里是自定义相册的Activity-->
+        <activity android:name=".ui.activity.PhotoAlbumActivity"
+            android:theme="@style/NoBar"/>
+        <!--这里是自定义精选相册的Activity-->
+        <activity android:name=".ui.activity.SelectPhotoActivity"
+            android:theme="@style/NoBar"/>
+        <!--这里是自定义精选相册的详情的Activity-->
+        <activity android:name=".ui.activity.SelectPhotoSingActivity"
+            android:theme="@style/NoBar"/>
+        <activity android:name=".ui.activity.CityActivity"
+            android:theme="@style/NoBar"/>
+        <activity android:name=".ui.activity.EntertainmentActivity"
+            android:theme="@style/NoBar"/>
+        <!--这里是热门搜索关键字的页面-->
+        <activity android:name=".ui.activity.FindSeekActivity"
+            android:theme="@style/NoBar"/>
+
 
         <!--消息界面的Activity-->
         <activity
             android:name=".ui.activity.NewsActivity"
             android:theme="@style/NoBar" />
 
+
         <!--新动态界面的Activity-->
-        <activity android:name=".ui.activity.DynamicActivity"
-            android:theme="@style/NoBar"/>
+        <activity
+            android:name=".ui.activity.DynamicActivity"
+            android:theme="@style/NoBar" />
+
 
         <!--点击图片显示照片大图-->
-        <activity android:name=".ui.activity.ShowPhotoActivity"
-            android:theme="@style/NoBar"/>
+        <activity
+            android:name=".ui.activity.ShowPhotoActivity"
+            android:theme="@style/NoBar" />
+
+        <!--设置界面-->
+        <activity
+            android:name=".ui.activity.SetUpActivity"
+            android:theme="@style/NoBar" />
+
+        <!--搜索界面-->
+        <activity
+            android:name=".ui.activity.SearchActivity"
+            android:theme="@style/NoBar" />
+
+        <!--个人资料-->
+        <activity
+            android:name=".ui.activity.PersonnalActivity"
+            android:theme="@style/NoBar" />
     </application>
 
 </manifest>

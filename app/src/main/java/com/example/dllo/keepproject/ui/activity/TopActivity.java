@@ -94,6 +94,7 @@ public class TopActivity extends AbsBaseActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.top_back:
                 goTo(this, AddFriendActivity.class);
+                finish();
                 overridePendingTransition(R.anim.finish_out, R.anim.finish_in);
                 break;
         }

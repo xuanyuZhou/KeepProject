@@ -51,5 +51,10 @@ public class UrlBean {
      */
     public static final String NEWSPEOPLE_URL = "http://api.gotokeep.com/v1.1/rankinglist/newbie";
 
+    /**
+     * 为你推荐接口
+     */
+    public static final String RECOMMENDFRIEND_URL = "http://api.gotokeep.com/v1.1/rankinglist/user/recommend";
+
 
 }

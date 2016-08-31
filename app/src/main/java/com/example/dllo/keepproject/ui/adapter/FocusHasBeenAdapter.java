@@ -37,6 +37,7 @@ public class FocusHasBeenAdapter extends BaseAdapter {
     final int TYPE_COUNT = 2;
     private int lineCount;
 
+
     public FocusHasBeenAdapter(Context context) {
         this.context = context;
     }
@@ -46,14 +47,17 @@ public class FocusHasBeenAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+
     @Override
     public int getCount() {
         return bean != null ? bean.getData().size() : 0;
     }
 
+
     @Override
     public Object getItem(int position) {
         return bean.getData().get(position);
+
     }
 
     @Override
@@ -63,6 +67,7 @@ public class FocusHasBeenAdapter extends BaseAdapter {
 
     @Override
     public int getItemViewType(int position) {
+
         // 根据接口中的type 类型来显示不同的行布局
         if (bean.getData().get(position).getType().equals("direct")) {
             return TYPE_1;
@@ -111,10 +116,9 @@ public class FocusHasBeenAdapter extends BaseAdapter {
         switch (type) {
             case TYPE_1:
                 holder.allTv.setVisibility(View.GONE);
-                if (!bean.getData().get(position).getAuthor().getAvatar().isEmpty()){
+                if (!bean.getData().get(position).getAuthor().getAvatar().isEmpty()) {
                     Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).config(Bitmap.Config.RGB_565).resize(200, 200).into(holder.headImage);
-                }
-                else {
+                } else {
                     holder.headImage.setImageResource(R.mipmap.keep_logo);
                 }
 
@@ -166,8 +170,10 @@ public class FocusHasBeenAdapter extends BaseAdapter {
                     @Override
                     public void run() {
                         lineCount = finalHolder.contentTv.getLineCount();
-                        finalHolder.allTv.setVisibility(View.VISIBLE);
-                        finalHolder.allTv.setText("全部");
+                        if (lineCount > 5) {
+                            finalHolder.allTv.setVisibility(View.VISIBLE);
+                            finalHolder.allTv.setText("全部");
+                        }
                     }
                 });
 
@@ -178,10 +184,9 @@ public class FocusHasBeenAdapter extends BaseAdapter {
             case TYPE_2:
 
                 twoHolder.allTwoTv.setVisibility(View.GONE);
-                if (!bean.getData().get(position).getAuthor().getAvatar().isEmpty()){
+                if (!bean.getData().get(position).getAuthor().getAvatar().isEmpty()) {
                     Picasso.with(context).load(bean.getData().get(position).getAuthor().getAvatar()).config(Bitmap.Config.RGB_565).resize(200, 200).into(twoHolder.headTwoImage);
-                }
-                else {
+                } else {
                     twoHolder.headTwoImage.setImageResource(R.mipmap.keep_logo);
                 }
                 twoHolder.userNameTwoTv.setText(bean.getData().get(position).getAuthor().getUsername());

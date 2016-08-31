@@ -35,7 +35,10 @@ public class DynamicSingleActivity extends AbsBaseActivity implements OnHttpCall
     private ListView dynamicListView;
     private DynamicSingleLvAdapter dynamicSingleLvAdapter;
     private ImageView dynamicBack;
-    private String dynamicUrl ;
+
+    //private String dynamicUrl = "http://api.gotokeep.com/v1.1/entries/57b12042aefd06e20c4cacba?limit=20&reverse=true";
+    private String dynamicUrl;
+
     @Override
     protected int setLayout() {
         return R.layout.activity_dynamicsingle;
