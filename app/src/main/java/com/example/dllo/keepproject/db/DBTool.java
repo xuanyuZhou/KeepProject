@@ -2,6 +2,7 @@ package com.example.dllo.keepproject.db;
 
 import com.example.dllo.keepproject.ui.app.MyApp;
 import com.litesuits.orm.LiteOrm;
+import com.litesuits.orm.db.assit.QueryBuilder;
 
 import java.util.List;
 
@@ -122,5 +123,17 @@ public class DBTool {
      */
     public  <T> void deleteDataAll(Class<T> tClass) {
         _deleteDataAll(tClass);
+    }
+
+    /**
+     * 查询  某字段 等于 Value的值
+     * @param cla
+     * @param field
+     * @param value
+     * @return
+     */
+    public  <T> List<T> getQueryByWhere(Class<T> cla,String field,String value){
+        String [] values = {value};
+        return liteOrm.<T>query(new QueryBuilder(cla).where(field + "= ?", values));
     }
 }

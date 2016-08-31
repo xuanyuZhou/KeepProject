@@ -114,6 +114,12 @@
         <!--点击图片显示照片大图-->
         <activity android:name=".ui.activity.ShowPhotoActivity"
             android:theme="@style/NoBar"/>
+        <!--注册界面-->
+        <activity android:name=".ui.activity.RegisterActivity"
+            android:theme="@style/NoBar"/>
+        <!--登录界面-->
+        <activity android:name=".ui.activity.LoginActivity"
+            android:theme="@style/NoBar"/>
     </application>
 
 </manifest>
