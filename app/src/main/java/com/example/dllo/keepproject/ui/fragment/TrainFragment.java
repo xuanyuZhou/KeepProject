@@ -129,7 +129,7 @@ public class TrainFragment extends AbsBaseFragment implements AdapterView.OnItem
                 ranKingTv.setText(response.getData().get(1).getRanking() + "");
                 Picasso.with(context).load(response.getData().get(0).getUser().getAvatar()).into(leftAvatarCiv);
                 Picasso.with(context).load(response.getData().get(1).getUser().getAvatar()).into(midAvatarCiv);
-                Picasso.with(context).load(response.getData().get(2).getUser().getAvatar()).into(rightAvatarCiv);
+                Picasso.with(context).load(response.getData().get(1).getUser().getAvatar()).into(rightAvatarCiv);
             }
 
             @Override

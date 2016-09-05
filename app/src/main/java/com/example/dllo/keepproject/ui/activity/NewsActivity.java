@@ -47,7 +47,12 @@ public class NewsActivity extends AbsBaseActivity implements View.OnClickListene
 
     @Override
     protected void initDatas() {
-
+        A:
+        for (int i = 0; i < 30; i++) {
+            for (int i1 = 0; i1 < 20; i1++) {
+                break A;
+            }
+        }
     }
 
     @Override
