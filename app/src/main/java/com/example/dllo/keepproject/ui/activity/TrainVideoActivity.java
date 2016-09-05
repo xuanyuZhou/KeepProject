@@ -37,6 +37,8 @@ public class TrainVideoActivity extends AbsBaseActivity implements View.OnClickL
     private ImageView backOnIv;// 左上角叉
     private Chronometer chronometer; // 计时器
     private ImageView lockIv,lockScreenIv,closedIv;// 锁屏相关
+    private ImageView stopIv;
+    private boolean isStop = false;
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         @Override
@@ -59,6 +61,7 @@ public class TrainVideoActivity extends AbsBaseActivity implements View.OnClickL
         lockIv = byView(R.id.aty_train_lockIv);
         lockScreenIv = byView(R.id.aty_train_lockScreenIv);
         closedIv = byView(R.id.aty_train_closedIv);
+        stopIv = byView(R.id.aty_train_stop);
     }
 
     @Override
@@ -66,6 +69,7 @@ public class TrainVideoActivity extends AbsBaseActivity implements View.OnClickL
         backOnIv.setOnClickListener(this);
         lockIv.setOnClickListener(this);
         closedIv.setOnClickListener(this);
+        stopIv.setOnClickListener(this);
     }
 
     @Override
@@ -210,6 +214,18 @@ public class TrainVideoActivity extends AbsBaseActivity implements View.OnClickL
                 lockScreenIv.setVisibility(View.GONE);
                 lockIv.setVisibility(View.VISIBLE);
                 closedIv.setVisibility(View.GONE);
+                break;
+            // 暂停
+            case R.id.aty_train_stop:
+                if (isStop) {
+                    trainVideoView.start();
+                    isStop = false;
+                    stopIv.setImageResource(R.mipmap.stop);
+                } else {
+                    trainVideoView.pause();
+                    isStop = true;
+                    stopIv.setImageResource(R.mipmap.star_course_play);
+                }
                 break;
         }
     }
