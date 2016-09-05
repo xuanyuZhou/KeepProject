@@ -157,6 +157,10 @@
         <activity
             android:name=".ui.activity.PersonnalActivity"
             android:theme="@style/NoBar" />
+
+        <!--音乐管理界面-->
+        <activity android:name=".ui.activity.MusicManageActivity"
+            android:theme="@style/NoBar"/>
     </application>
 
 </manifest>
