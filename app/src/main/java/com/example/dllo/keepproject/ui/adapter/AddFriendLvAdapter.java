@@ -105,12 +105,10 @@ public class AddFriendLvAdapter extends BaseAdapter {
                 }
                 oneHolder.userNameTv.setText(bean.getData().get(position).getUser().getUsername());
                 oneHolder.fromTv.setText(bean.getData().get(position).getSource());
-                if (bean.getData().get(position).getEntries().isEmpty()) {
+
 
                     oneHolder.contentIv.setImageResource(R.mipmap.no_entryp_hoto);
-                } else {
-                    Picasso.with(context).load(bean.getData().get(position).getEntries().get(position).getPhoto()).config(Bitmap.Config.RGB_565).resize(200, 200).into(oneHolder.contentIv);
-                }
+
                 break;
             case TYPE_2:
                 Picasso.with(context).load(bean.getData().get(position).getUser().getAvatar()).config(Bitmap.Config.RGB_565).resize(200, 200).into(twoHolder.headTwoImage);

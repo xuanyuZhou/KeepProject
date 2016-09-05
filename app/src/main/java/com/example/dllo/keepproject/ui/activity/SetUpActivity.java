@@ -54,9 +54,9 @@ public class SetUpActivity extends AbsBaseActivity implements View.OnClickListen
 
         ArrayList<String> listOne = new ArrayList<>();
         listOne.add("个人资料");
-        listOne.add("账号管理");
+        listOne.add("音乐管理");
         listOne.add("账号绑定");
-        listOne.add("隐私设置");
+        listOne.add("账号管理");
         adapter = new SetUpLvAdapter(MyApp.getContext());
         adapter.setArrayList(listOne);
         setupLv.setAdapter(adapter);
@@ -82,5 +82,12 @@ public class SetUpActivity extends AbsBaseActivity implements View.OnClickListen
          if (position ==0){
          goTo(this,PersonnalActivity.class);
              overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
-    }}
+    }
+
+     if (position == 1){
+         goTo(this,MusicManageActivity.class);
+         overridePendingTransition(R.anim.activity_in,R.anim.activity_out);
+     }
+    }
+
 }
